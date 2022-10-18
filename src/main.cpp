@@ -469,6 +469,10 @@ void Inicializar( int argc, char *argv[] )
    // 'Escena3', etc..
    // ......
 
+   //mio:
+   //añado escena2
+   escenas.push_back(new Escena2());
+
 
 
 }

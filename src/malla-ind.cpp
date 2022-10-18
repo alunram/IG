@@ -178,6 +178,8 @@ MallaPLY::MallaPLY(const std::string &nombre_arch)
 
    // COMPLETAR: práctica 2: leer archivo PLY e inicializar la malla
    // ..........................
+   //mio:
+   LeerPLY(nombre_arch, vertices, triangulos);
 
    // COMPLETAR: práctica 4: invocar  a 'calcularNormales' para el cálculo de normales
    // .................
@@ -222,7 +224,6 @@ Cubo::Cubo()
 
 // ****************************************************************************
 // Clase 'CuboTejado'
-
 CuboTejado::CuboTejado()
     : MallaInd("cubo 8 vértices")
 {
@@ -405,14 +406,16 @@ CasaX :: CasaX ()
 {
    vertices =
        {
-           {-1.0, -1.0, -1.0}, // 0
-           {-1.0, -1.0, +1.0}, // 1
-           {-1.0, +1.0, -1.0}, // 2
-           {-1.0, +1.0, +1.0}, // 3
-           {+1.0, -1.0, -1.0}, // 4
-           {+1.0, -1.0, +1.0}, // 5
-           {+1.0, +1.0, -1.0}, // 6
-           {+1.0, +1.0, +1.0}, // 7
+           {0.0, 0.0, 0.0}, // 0
+           {0.0, 0.0, +0.8}, // 1
+           {0.0, +1.0, 0.0}, // 2
+           {0.0, +1.0, +0.8}, // 3
+           {+1.0, 0.0, 0.0}, // 4
+           {+1.0, 0.0, +0.8}, // 5
+           {+1.0, +1.0, 0.0}, // 6
+           {+1.0, +1.0, +0.8}, // 7
+           {+1.0, +1.3, +0.4},   //8
+           {0.0, +1.3, +0.4},   //9
        };
 
    triangulos =
@@ -429,8 +432,40 @@ CasaX :: CasaX ()
            {0, 6, 4},
            {0, 2, 6}, // Z-
            {1, 5, 7},
-           {1, 7, 3} // Z+ (+1)
+           {1, 7, 3}, // Z+ (+1)
+
+           {6,8,7},
+           {3,9,2},
+           {7,8,3},
+           {8,9,3},
+           {6,2,8},
+           {2,9,8},
        };
+       /*
+           {0.0, 0.0, 0.0}, // 0
+           {0.0, 0.0, +0.8}, // 1
+           {0.0, +1.0, 0.0}, // 2
+           {0.0, +1.0, +0.8}, // 3
+           {+1.0, 0.0, 0.0}, // 4
+           {+1.0, 0.0, +0.8}, // 5
+           {+1.0, +1.0, 0.0}, // 6
+           {+1.0, +1.0, +0.8}, // 7
+           {+1.0, +1.3, +0.4},   //8
+           {0.0, +1.3, +0.4},   //9
+       */
+
+
+      col_ver.push_back({0, 0, 0});
+      col_ver.push_back({0, 0, +0.8});
+      col_ver.push_back({0.0, +1.0, 0.0});
+      col_ver.push_back({0.0, +1.0, +0.8});
+      col_ver.push_back({+1.0, 0.0, 0.0});
+      col_ver.push_back({+1.0, 0.0, +0.8});
+      col_ver.push_back({+1.0, +1.0, 0.0});
+      col_ver.push_back({+1.0, +1.0, +0.8});
+      col_ver.push_back({+1.0, +1.3, +0.4});
+      col_ver.push_back({0.0, +1.3, +0.4});      
+       
 }
 
 //-----------------------------------------------------------------------------------------------
@@ -498,3 +533,127 @@ MallaPiramideL :: MallaPiramideL ()
       };
 }
 
+//EJERCICIO EXTRA 1 PRACTICA 2:
+PiramideEstrellaZ::PiramideEstrellaZ(unsigned n)
+: MallaInd ("Piramide Estrella Z")
+{
+   assert(n>1);
+
+   const float PI = 3.14159265358979323846;
+
+   //añadir el centro en (0.5, 0.5, 0)
+   vertices.push_back({0.5, 0.5, 0.0});
+   col_ver.push_back({0.5, 0.5, 0.0});
+
+   //añadir resto de vértices
+   for (unsigned i = 0; i < n; i++)
+   {
+      //float angulo = 2 * PI * i / n;
+      float angulo = 2 * PI * i / n ;
+      vertices.push_back({float(0.5 + 0.5 * cos(angulo)), float(0.5 + 0.5 * sin(angulo)), 0.0});
+      col_ver.push_back({float(0.5 + 0.5 * cos(angulo)), float(0.5 + 0.5 * sin(angulo)), 0.0});
+   }
+
+   for (unsigned i = 0; i < n; i++)
+   {
+      //float angulo = 2 * PI * i / n;
+      float angulo =  PI / n + 2 * PI * i / n ;
+      vertices.push_back({float(0.5 + 0.25 * cos(angulo)), float(0.5 + 0.25 * sin(angulo)), 0.0});
+      col_ver.push_back({float(0.5 + 0.25 * cos(angulo)), float(0.5 + 0.25 * sin(angulo)), 0.0});
+   }
+
+   //añadir el apice en (0.5, 0.5, 0.5)
+   vertices.push_back({0.5, 0.5, 0.5});
+   col_ver.push_back({1.0, 1.0, 1.0});
+
+   //añadir los triangulos
+   for (unsigned i = 1; i <= n ; i++)
+   {
+      triangulos.push_back({0, i, n + i});
+   }
+
+   triangulos.push_back({0, 1, 2 * n});
+
+   for (unsigned i = 2; i <= n ; i++)
+   {
+      triangulos.push_back({0, i, n + i - 1});
+   }
+
+
+   //extra p2:
+   for (unsigned i = 1; i <= n; i++)
+   {
+      triangulos.push_back({i, n + i, 2*n+1});
+   }
+   triangulos.push_back({1, 2*n, 2 * n +1});
+   for (unsigned i = 2; i <= n ; i++)
+   {
+      triangulos.push_back({i, n+i-1, 2*n+1});
+   }
+   
+}
+
+//EJERCICIO EXTRA 2 PRACTICA 2:
+RejillaY::RejillaY(unsigned n, unsigned m)
+: MallaInd ("Rejilla Y")
+{
+   assert(n>1);
+   assert(m>1);
+
+   float x = 0.0;
+   float z = 0.0;
+   //añadir los vértices
+   for (unsigned i = 0; i < n; i++)
+   {
+      for (unsigned j = 0; j < m; j++)
+      {
+         x = float(i) / n;
+         z = float(j) / m;
+         vertices.push_back({x, 0.0, z});
+         col_ver.push_back({x, 0.0, z});
+      }
+   }
+   
+   //añadir los triangulos
+   for (unsigned i = 0; i < m-1; i++)
+   {
+      for (unsigned j = 0; j < n-1; j++)
+      {
+         triangulos.push_back({ i*n+j+1, i*n+j, i*n+j+n});
+         triangulos.push_back({ i*n+j+1, i*n+j+n, i*n+j+n+1});
+      }
+   }
+   
+}
+
+//EJERCICIO EXTRA 3 PRACTICA 2:
+MallaTorre::MallaTorre(unsigned n)
+: MallaInd ("Torre")
+{
+   assert(n>0);
+
+   //añadir los vértices
+   for (unsigned i = 0; i <= n; i++)
+   {
+      vertices.push_back({0.0, float(i), 0.0});
+      vertices.push_back({+1.0, float(i), 0.0});
+      vertices.push_back({+1.0, float(i), +1.0});
+      vertices.push_back({0.0, float(i), +1.0});
+   }
+
+   //añadir los triangulos
+   for (unsigned i = 0; i < n; i++)
+   {
+      //triangulos.push_back({4*i, 4*i+1, 4*i+2});
+      //triangulos.push_back({4*i, 4*i+2, 4*i+3});
+      triangulos.push_back({4*i, 4*i+4, 4*i+1});   //T1 (0,1,4)
+      triangulos.push_back({4*i+1, 4*i+4, 4*i+5});   //T2 (1,4,5)
+      triangulos.push_back({4*i+2, 4*i+1, 4*i+5});   //T3 (2,1,5)
+      triangulos.push_back({4*i+2, 4*i+5, 4*i+6});   //T4 (2,5,6)
+      triangulos.push_back({4*i+3, 4*i+2, 4*i+6});   //T5 (3,2,6)
+      triangulos.push_back({4*i+3, 4*i+6, 4*i+7});   //T6 (3,6,7)
+      triangulos.push_back({4*i, 4*i+3, 4*i+7});   //T7 (0,3,7)
+      triangulos.push_back({4*i, 4*i+7, 4*i+4});   //T8 (0,7,4)
+   }
+
+}

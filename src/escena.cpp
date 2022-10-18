@@ -214,6 +214,7 @@ Escena1::Escena1()
    // cuando haga mas objetos se veran poniendolo aqui
    objetos.push_back(new CuboColores());
    objetos.push_back(new EstrellaZ(nestrella));
+   objetos.push_back(new CasaX());
    objetos.push_back(new MallaTriangulo());
    objetos.push_back(new MallaCuadrado());
    objetos.push_back(new MallaPiramideL());
@@ -227,6 +228,29 @@ Escena1::Escena1()
 // Añadir la implementación del constructor de la clase Escena2 para construir
 // los objetos que se indican en los guiones de las práctica 2
 // .......
+Escena2::Escena2()
+{
+   using namespace std;
+
+   cout << "Creando objetos de escena 2 .... " << flush;
+
+
+   //aquí pondré los objetos.push_back();
+   objetos.push_back(new Cilindro(20, 20));
+   objetos.push_back(new Cono(20, 20));
+   //objetos.push_back(new MallaRevolPLY("peon.ply", 20));
+   //objetos.push_back(new MallaPLY("ant.ply"));
+   //objetos.push_back(new MallaPLY("beethoven.ply"));
+   //objetos.push_back(new MallaPLY("big_dodge.ply"));
+   objetos.push_back(new Esfera(40, 40));
+   objetos.push_back(new PiramideEstrellaZ(8));
+   objetos.push_back(new RejillaY(10,10));
+   objetos.push_back(new MallaTorre(5));
+   
+
+   cout << "hecho." << endl
+        << flush;
+}
 
 // -------------------------------------------------------------------------
 // COMPLETAR: Práctica 3

@@ -156,6 +156,27 @@ class Cubo24 : public MallaInd
       Cubo24();
 } ;
 
+//EJERCICIO EXTRA 1 PRACTICA 2
+class PiramideEstrellaZ : public MallaInd
+{
+   public:
+      PiramideEstrellaZ(unsigned n);
+};
+
+//EJERCICIO EXTRA 2 PRACTICA 2
+class RejillaY : public MallaInd
+{
+   public:
+      RejillaY(unsigned n, unsigned m);
+};
+
+//EJERCICIO EXTRA 3 PRACTICA 2
+class MallaTorre : public MallaInd
+{
+   public:
+      MallaTorre(unsigned n);
+};
+
 
 
 #endif

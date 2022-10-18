@@ -97,7 +97,13 @@ class Escena1 : public Escena
 // Añadir la declaración de las clases Escena2, Escena3, etc ..... para definir
 // los objetos que se indican en los guiones de las prácticas 2,3,4 y 5.
 
-
+//mio:
+//añado la clase escena2
+class Escena2 : public Escena
+{
+   public:
+      Escena2() ;
+};
 
 
 #endif // ESCENA_H
