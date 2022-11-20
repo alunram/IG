@@ -119,12 +119,22 @@ materiales-luces.h
 /home/alvaro/IG/practica1/src/materiales-luces.h
 seleccion.h
 /home/alvaro/IG/practica1/src/seleccion.h
+modelo-jer.h
+/home/alvaro/IG/practica1/src/modelo-jer.h
 
 /home/alvaro/IG/practica1/src/escena.h
 vector
 -
 practicas.h
 /home/alvaro/IG/practica1/src/practicas.h
+
+/home/alvaro/IG/practica1/src/grafo-escena.h
+tup_mat.h
+/home/alvaro/IG/practica1/src/tup_mat.h
+objeto3d.h
+/home/alvaro/IG/practica1/src/objeto3d.h
+materiales-luces.h
+/home/alvaro/IG/practica1/src/materiales-luces.h
 
 /home/alvaro/IG/practica1/src/malla-ind.cpp
 ig-aux.h
@@ -139,14 +149,6 @@ vector
 -
 objeto3d.h
 /home/alvaro/IG/practica1/src/objeto3d.h
-
-/home/alvaro/IG/practica1/src/malla-revol.cpp
-ig-aux.h
-/home/alvaro/IG/practica1/src/ig-aux.h
-lector-ply.h
-/home/alvaro/IG/practica1/src/lector-ply.h
-malla-revol.h
-/home/alvaro/IG/practica1/src/malla-revol.h
 
 /home/alvaro/IG/practica1/src/malla-revol.h
 vector
@@ -165,6 +167,18 @@ practicas.h
 /home/alvaro/IG/practica1/src/practicas.h
 lector-jpg.h
 /home/alvaro/IG/practica1/src/lector-jpg.h
+
+/home/alvaro/IG/practica1/src/modelo-jer.cpp
+modelo-jer.h
+/home/alvaro/IG/practica1/src/modelo-jer.h
+
+/home/alvaro/IG/practica1/src/modelo-jer.h
+malla-revol.h
+/home/alvaro/IG/practica1/src/malla-revol.h
+grafo-escena.h
+/home/alvaro/IG/practica1/src/grafo-escena.h
+malla-ind.h
+/home/alvaro/IG/practica1/src/malla-ind.h
 
 /home/alvaro/IG/practica1/src/objeto3d.h
 string

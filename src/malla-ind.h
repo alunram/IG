@@ -178,5 +178,42 @@ class MallaTorre : public MallaInd
 };
 
 
+//PARA LA P3
+class Rueda : public MallaInd
+{
+   public:
+      Rueda(unsigned n);
+};
+
+class SillinBici : public MallaInd
+{
+   public:
+      SillinBici();
+};
+
+class BielaBici : public MallaInd
+{
+   public:
+      BielaBici();
+};
+
+class PedalBici : public MallaInd
+{
+   public:
+      PedalBici();
+};
+
+class PlatoBici : public MallaInd
+{
+   public:
+      PlatoBici(unsigned n);
+};
+
+class RampaBici : public MallaInd
+{
+   public:
+      RampaBici();
+};
+
 
 #endif

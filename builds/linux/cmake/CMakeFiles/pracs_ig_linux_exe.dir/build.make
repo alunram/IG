@@ -161,9 +161,22 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alvaro/IG/practica1/src/materiales-luces.cpp -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.s
 
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/modelo-jer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o -c /home/alvaro/IG/practica1/src/modelo-jer.cpp
+
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alvaro/IG/practica1/src/modelo-jer.cpp > CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.i
+
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alvaro/IG/practica1/src/modelo-jer.cpp -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.s
+
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o: /home/alvaro/IG/practica1/src/objeto3d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o -c /home/alvaro/IG/practica1/src/objeto3d.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.s: c
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o: /home/alvaro/IG/practica1/src/seleccion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o -c /home/alvaro/IG/practica1/src/seleccion.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.s: 
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o: /home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o -c /home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ca
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o: /home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o -c /home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fb
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o: /home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o -c /home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.i: cmake_force
@@ -228,7 +241,7 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o: /home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o -c /home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/le
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o: CMakeFiles/pracs_ig_linux_exe.dir/flags.make
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o: /home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o -c /home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.i: cmake_force
@@ -262,6 +275,7 @@ pracs_ig_linux_exe_OBJECTS = \
 "CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-ind.cpp.o" \
 "CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-revol.cpp.o" \
 "CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o" \
+"CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o" \
 "CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o" \
 "CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o" \
 "CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o" \
@@ -281,6 +295,7 @@ pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/s
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-ind.cpp.o
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-revol.cpp.o
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o
+pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o
@@ -290,7 +305,7 @@ pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/m
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/build.make
 pracs_ig_linux_exe: CMakeFiles/pracs_ig_linux_exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable pracs_ig_linux_exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable pracs_ig_linux_exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pracs_ig_linux_exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

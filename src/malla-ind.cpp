@@ -346,7 +346,7 @@ CuboColores::CuboColores()
 }
 
 // -----------------------------------------------------------------------------------------------
-//EJERCICIO EXTRA 1
+//EJERCICIO EXTRA 1 P1
 EstrellaZ :: EstrellaZ (unsigned n)
     : MallaInd ("estrella z")
 {
@@ -400,7 +400,7 @@ EstrellaZ :: EstrellaZ (unsigned n)
 }
 
 //-----------------------------------------------------------------------------------------------
-//EJERCICIO EXTRA 2
+//EJERCICIO EXTRA 2 P1
 CasaX :: CasaX ()
    : MallaInd ("casa x")
 {
@@ -469,7 +469,7 @@ CasaX :: CasaX ()
 }
 
 //-----------------------------------------------------------------------------------------------
-//EJERCICIO EXTRA 3
+//EJERCICIO EXTRA 3 P1
 MallaTriangulo :: MallaTriangulo ()
 : MallaInd ("triangulo")
 {
@@ -533,6 +533,8 @@ MallaPiramideL :: MallaPiramideL ()
       };
 }
 
+
+//-----------------------------------------------------------------------------------------------
 //EJERCICIO EXTRA 1 PRACTICA 2:
 PiramideEstrellaZ::PiramideEstrellaZ(unsigned n)
 : MallaInd ("Piramide Estrella Z")
@@ -607,8 +609,8 @@ RejillaY::RejillaY(unsigned n, unsigned m)
    {
       for (unsigned j = 0; j < m; j++)
       {
-         x = float(i) / n;
-         z = float(j) / m;
+         x = float(i) / (n-1);
+         z = float(j) / (m-1);
          vertices.push_back({x, 0.0, z});
          col_ver.push_back({x, 0.0, z});
       }
@@ -656,4 +658,182 @@ MallaTorre::MallaTorre(unsigned n)
       triangulos.push_back({4*i, 4*i+7, 4*i+4});   //T8 (0,7,4)
    }
 
+}
+
+//----------------------------------------------------------------------
+//PARA LA P3:
+Rueda::Rueda(unsigned n)
+: MallaInd("Rueda bicicleta")
+{
+   assert(n>0);
+   const float PI = 3.14159265358979323846;
+
+   //añadir los vértices
+   vertices.push_back({0.0, 0.0, 0.0});
+   vertices.push_back({0.0, 0.0, +0.05});
+   //vertices.push_back({float(0.5 + 0.5 * cos(angulo)), float(0.5 + 0.5 * sin(angulo)), 0.0});
+   for (unsigned i = 0; i < n; i++)
+   {
+      float angulo = 2 * PI * i / n;
+      vertices.push_back({float(cos(angulo)), float(sin(angulo)), 0.0});
+      vertices.push_back({float(cos(angulo)), float(sin(angulo)), +0.05});
+   }
+
+   //añadir los triangulos
+   for (unsigned i = 2; i <= 2*n; i++)
+   {
+      triangulos.push_back({ i, i+2, i+1});
+   }
+   triangulos.push_back({ 3, 2, 2*n+1});
+   triangulos.push_back({ 2, 2*n, 2*n+1});
+
+   for (unsigned i = 2; i < 2*n; i=i+4)
+   {
+      triangulos.push_back({ 0, 1, i});
+   }
+}
+
+SillinBici::SillinBici()
+: MallaInd("Sillin bicicleta")
+{
+   vertices =
+       {
+           {-0.5, 0.0, -0.5}, // 0
+           {-0.5, 0.0, +0.5}, // 1
+           {-0.5, +0.25, -0.5}, // 2
+           {-0.5, +0.25, +0.5}, // 3
+           {+1.0, 0.0, -0.5}, // 4
+           {+1.0, 0.0, +0.5}, // 5
+           {+1.0, +0.25, -0.5}, // 6
+           {+1.0, +0.25, +0.5}, // 7
+           {+1.5, +0.2, 0.0}  // 8
+       };
+
+   triangulos =
+       {
+           {0, 1, 3}, {0, 3, 2}, // X-
+           //{4, 7, 5},
+           //{4, 6, 7}, // X+ (+4)
+           {7, 8, 6}, {5, 8, 7}, {4, 6, 8}, {4, 8, 5},
+
+           {0, 5, 1},
+           {0, 4, 5}, // Y-
+           {2, 3, 7},
+           {2, 7, 6}, // Y+ (+2)
+
+           {0, 6, 4},
+           {0, 2, 6}, // Z-
+           {1, 5, 7},
+           {1, 7, 3} // Z+ (+1)
+       };
+
+}
+
+BielaBici :: BielaBici()
+: MallaInd ("Biela bicicleta")
+{
+      vertices =
+       {
+           {-0.1, -0.12, 0.0}, // 0 
+           {-0.1, +0.12, 0.0}, // 1
+           {-0.1, -0.12, +0.2}, // 2
+           {-0.1, +0.12, +0.2}, // 3
+           {+1.45, -0.12, 0.0}, // 4
+           {+1.45, +0.12, 0.0}, // 5
+           {+1.45, -0.12, +0.2}, // 6
+           {+1.45, +0.12, +0.2}, // 7
+           //{+1.5, +0.2, 0.0}  // 8
+       };
+
+   triangulos =
+       {
+           {0, 1, 3}, {0, 3, 2}, // X-
+           {4, 7, 5},
+           {4, 6, 7}, // X+ (+4)
+           //{7, 8, 6}, {5, 8, 7}, {4, 6, 8}, {4, 8, 5},
+
+           {0, 5, 1},
+           {0, 4, 5}, // Y-
+           {2, 3, 7},
+           {2, 7, 6}, // Y+ (+2)
+
+           {0, 6, 4},
+           {0, 2, 6}, // Z-
+           {1, 5, 7},
+           {1, 7, 3} // Z+ (+1)
+       };
+}
+
+PedalBici::PedalBici()
+:MallaInd("Pedal bicicleta")
+{
+   vertices =
+       {
+           {-0.5, 0.0, -0.5}, // 0
+           {+0.5, 0.0, -0.5}, // 1
+           {-0.5, +0.25, -0.5}, // 2
+           {+0.5, +0.25, -0.5}, // 3
+           {-0.5, 0.0, +1.0}, // 4
+           {+0.5, 0.0, +1.0}, // 5
+           {-0.5, +0.25, +1.0}, // 6
+           {+0.5, +0.25, +1.0}, // 7
+           //{+1.5, +0.2, 0.0}  // 8
+       };
+
+   triangulos =
+       {
+           {0, 1, 3}, {0, 3, 2}, // X-
+           {4, 7, 5},
+           {4, 6, 7}, // X+ (+4)
+           //{7, 8, 6}, {5, 8, 7}, {4, 6, 8}, {4, 8, 5},
+
+           {0, 5, 1},
+           {0, 4, 5}, // Y-
+           {2, 3, 7},
+           {2, 7, 6}, // Y+ (+2)
+
+           {0, 6, 4},
+           {0, 2, 6}, // Z-
+           {1, 5, 7},
+           {1, 7, 3} // Z+ (+1)
+       };  
+}
+
+PlatoBici::PlatoBici(unsigned n)
+:MallaInd("Plato bicicleta")
+{
+   assert(n>0);
+   const float PI = 3.14159265358979323846;
+
+   vertices.push_back({0.0, 0.0, 0.0});
+
+   for (unsigned i = 0; i < n; i++)
+   {
+      float angulo = 2 * PI * i / n;
+      vertices.push_back({float(cos(angulo)), float(sin(angulo)), 0.0});
+   }
+
+   for (unsigned i = 1; i <= n; i++)
+   {
+      triangulos.push_back({ 0, i, i+1});
+   }
+   triangulos.push_back({ 0, n, 1});
+
+}
+
+RampaBici::RampaBici()
+:MallaInd("Rampa bici 2")
+{
+   vertices =
+       {
+           {-1.0, 0.0, 0.0}, // 0
+           {-1.0, 0.0, +3.0}, // 1
+           {+9.0, +3.42, 0.0}, // 2
+           {+9.0, +3.42, +3.0}, // 3
+       };
+
+   triangulos =
+       {
+           {0, 1, 2}, {2, 3, 1}
+       };
 }

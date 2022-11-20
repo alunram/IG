@@ -81,6 +81,39 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
 {
    // COMPLETAR: práctica 3: recorrer las entradas y visualizar cada nodo.
    // ........
+   //mio:
+   //esta en las diapositivas del tema 2, pg173
+   //guarda modelview actual
+   cv.cauce->pushMM();
+
+   //color?????
+   const Tupla4f color_previo = leerFijarColVertsCauce(cv);
+   
+   //rcorrer todas las entradas del array que hay en el nodo:
+   for (unsigned i = 0; i < entradas.size(); i++)
+   {
+      switch (entradas[i].tipo)
+      {
+      case TipoEntNGE::objeto:
+         entradas[i].objeto->visualizarGL(cv);
+         break;
+      
+      case TipoEntNGE::transformacion :
+         cv.cauce->compMM(*(entradas[i].matriz));
+         break;
+
+      case TipoEntNGE::material:
+         //esto ya sera de la P4 supongo
+         break;
+      }
+   }
+   
+   // restaurar el color previamente fijado
+   cv.cauce->fijarColor(color_previo);
+
+   //pop de modelview
+   cv.cauce->popMM();
+
 
    // COMPLETAR: práctica 4: en la práctica 4, si 'cv.iluminacion' es 'true',
    // se deben de gestionar los materiales:
@@ -115,6 +148,28 @@ void NodoGrafoEscena::visualizarGeomGL( ContextoVis & cv )
    // - ignorar las entradas de tipo material, y la gestión de materiales (se usa sin iluminación)
 
    // .......
+   //mio:
+   //guarda modelview actual
+   cv.cauce->pushMM();
+
+   //rcorrer todas las entradas del array que hay en el nodo:
+   for (unsigned i = 0; i < entradas.size(); i++)
+   {
+      switch (entradas[i].tipo)
+      {
+      case TipoEntNGE::objeto:
+         entradas[i].objeto->visualizarGeomGL(cv);
+         break;
+      
+      //esto no se si hace falta:
+      case TipoEntNGE::transformacion :
+         cv.cauce->compMM(*(entradas[i].matriz));
+         break;
+      }
+   }
+
+   //pop de modelview
+   cv.cauce->popMM();
 
 }
 
@@ -135,7 +190,10 @@ unsigned NodoGrafoEscena::agregar( const EntradaNGE & entrada )
 {
    // COMPLETAR: práctica 3: agregar la entrada al nodo, devolver índice de la entrada agregada
    // ........
-   return 0 ; // sustituir por lo que corresponda ....
+   //mio:
+   entradas.push_back(entrada);
+
+   return (entradas.size()-1) ; // sustituir por lo que corresponda ....
 
 }
 // -----------------------------------------------------------------------------
@@ -167,7 +225,13 @@ Matriz4f * NodoGrafoEscena::leerPtrMatriz( unsigned indice )
    // COMPLETAR: práctica 3: devolver puntero la matriz en ese índice
    //   (debe de dar error y abortar si no hay una matriz en esa entrada)
    // ........(sustituir 'return nullptr' por lo que corresponda)
-   return nullptr ;
+   //mio:
+   //esta en la diap 183 del tema2
+   assert(indice < entradas.size());
+   assert(entradas[indice].tipo == TipoEntNGE::transformacion);
+   assert(entradas[indice].matriz != nullptr);
+
+   return entradas[indice].matriz ;
 
 
 }

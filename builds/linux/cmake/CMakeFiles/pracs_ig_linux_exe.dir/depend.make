@@ -66,9 +66,11 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: ../
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/camara.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/escena.cpp
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/escena.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/grafo-escena.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/malla-ind.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/malla-revol.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/materiales-luces.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/modelo-jer.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/objeto3d.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/practicas.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o: /home/alvaro/IG/practica1/src/seleccion.h
@@ -139,6 +141,22 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o: /home/alvaro/IG/practica1/src/materiales-luces.cpp
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o: /home/alvaro/IG/practica1/src/materiales-luces.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o: /home/alvaro/IG/practica1/src/practicas.h
+
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: ../../../materiales/src-cpp/cauce.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: ../../../materiales/src-cpp/fbo.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: ../../../materiales/src-cpp/ig-aux.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: ../../../materiales/src-cpp/lector-jpg.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: ../../../materiales/src-cpp/tup_mat.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/camara.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/escena.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/grafo-escena.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/malla-ind.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/malla-revol.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/materiales-luces.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/modelo-jer.cpp
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/modelo-jer.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/objeto3d.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o: /home/alvaro/IG/practica1/src/practicas.h
 
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o: ../../../materiales/src-cpp/cauce.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o: ../../../materiales/src-cpp/fbo.h

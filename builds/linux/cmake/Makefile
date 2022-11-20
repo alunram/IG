@@ -474,6 +474,33 @@ home/alvaro/IG/practica1/src/materiales-luces.cpp.s:
 	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.s
 .PHONY : home/alvaro/IG/practica1/src/materiales-luces.cpp.s
 
+home/alvaro/IG/practica1/src/modelo-jer.o: home/alvaro/IG/practica1/src/modelo-jer.cpp.o
+
+.PHONY : home/alvaro/IG/practica1/src/modelo-jer.o
+
+# target to build an object file
+home/alvaro/IG/practica1/src/modelo-jer.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o
+.PHONY : home/alvaro/IG/practica1/src/modelo-jer.cpp.o
+
+home/alvaro/IG/practica1/src/modelo-jer.i: home/alvaro/IG/practica1/src/modelo-jer.cpp.i
+
+.PHONY : home/alvaro/IG/practica1/src/modelo-jer.i
+
+# target to preprocess a source file
+home/alvaro/IG/practica1/src/modelo-jer.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.i
+.PHONY : home/alvaro/IG/practica1/src/modelo-jer.cpp.i
+
+home/alvaro/IG/practica1/src/modelo-jer.s: home/alvaro/IG/practica1/src/modelo-jer.cpp.s
+
+.PHONY : home/alvaro/IG/practica1/src/modelo-jer.s
+
+# target to generate assembly for a file
+home/alvaro/IG/practica1/src/modelo-jer.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.s
+.PHONY : home/alvaro/IG/practica1/src/modelo-jer.cpp.s
+
 home/alvaro/IG/practica1/src/objeto3d.o: home/alvaro/IG/practica1/src/objeto3d.cpp.o
 
 .PHONY : home/alvaro/IG/practica1/src/objeto3d.o
@@ -576,6 +603,9 @@ help:
 	@echo "... home/alvaro/IG/practica1/src/materiales-luces.o"
 	@echo "... home/alvaro/IG/practica1/src/materiales-luces.i"
 	@echo "... home/alvaro/IG/practica1/src/materiales-luces.s"
+	@echo "... home/alvaro/IG/practica1/src/modelo-jer.o"
+	@echo "... home/alvaro/IG/practica1/src/modelo-jer.i"
+	@echo "... home/alvaro/IG/practica1/src/modelo-jer.s"
 	@echo "... home/alvaro/IG/practica1/src/objeto3d.o"
 	@echo "... home/alvaro/IG/practica1/src/objeto3d.i"
 	@echo "... home/alvaro/IG/practica1/src/objeto3d.s"

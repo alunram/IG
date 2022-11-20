@@ -10,6 +10,7 @@
 #include "camara.h"
 #include "materiales-luces.h"
 #include "seleccion.h"
+#include "modelo-jer.h"
 
 // -----------------------------------------------------------------------------------------------
 
@@ -209,8 +210,9 @@ Escena1::Escena1()
    // .........
    //mio:
    unsigned nestrella = 8;
+   objetos.push_back(new Rueda(50));
    objetos.push_back(new CuboTejado());
-   objetos.push_back(new Tetraedro()); //FALTA ESTO, no tengo hecho el tetraedro todavia
+   objetos.push_back(new Tetraedro()); 
    // cuando haga mas objetos se veran poniendolo aqui
    objetos.push_back(new CuboColores());
    objetos.push_back(new EstrellaZ(nestrella));
@@ -228,6 +230,7 @@ Escena1::Escena1()
 // Añadir la implementación del constructor de la clase Escena2 para construir
 // los objetos que se indican en los guiones de las práctica 2
 // .......
+//mio:
 Escena2::Escena2()
 {
    using namespace std;
@@ -237,11 +240,12 @@ Escena2::Escena2()
 
    //aquí pondré los objetos.push_back();
    objetos.push_back(new Cilindro(20, 20));
-   objetos.push_back(new Cono(20, 20));
-   //objetos.push_back(new MallaRevolPLY("peon.ply", 20));
-   //objetos.push_back(new MallaPLY("ant.ply"));
-   //objetos.push_back(new MallaPLY("beethoven.ply"));
-   //objetos.push_back(new MallaPLY("big_dodge.ply"));
+   objetos.push_back(new Cilindro(50, 50));
+   objetos.push_back(new Cono(15, 35));
+   objetos.push_back(new MallaRevolPLY("peon.ply", 20));
+   objetos.push_back(new MallaPLY("ant.ply"));
+   objetos.push_back(new MallaPLY("beethoven.ply"));
+   objetos.push_back(new MallaPLY("big_dodge.ply"));
    objetos.push_back(new Esfera(40, 40));
    objetos.push_back(new PiramideEstrellaZ(8));
    objetos.push_back(new RejillaY(10,10));
@@ -257,6 +261,23 @@ Escena2::Escena2()
 // Añadir la implementación del constructor de la clase Escena3 para construir
 // los objetos que se indican en los guiones de las práctica 3
 // .......
+//mio:
+Escena3:: Escena3()
+{
+   using namespace std;
+
+   cout << "Creando objetos de escena 3 .... " << flush;
+
+   //aquí pondré los objetos.push_back();
+   objetos.push_back(new P3());
+   objetos.push_back(new Bici());
+   objetos.push_back(new GrafoEstrellaX(6));
+   objetos.push_back(new GrafoCubos());
+
+
+   cout << "hecho." << endl
+        << flush;
+}
 
 // ----------------------------------------------------------------------
 // COMPLETAR: Práctica 4

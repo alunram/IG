@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alvaro/IG/practica1/src/malla-ind.cpp" "/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-ind.cpp.o"
   "/home/alvaro/IG/practica1/src/malla-revol.cpp" "/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-revol.cpp.o"
   "/home/alvaro/IG/practica1/src/materiales-luces.cpp" "/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o"
+  "/home/alvaro/IG/practica1/src/modelo-jer.cpp" "/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o"
   "/home/alvaro/IG/practica1/src/objeto3d.cpp" "/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o"
   "/home/alvaro/IG/practica1/src/seleccion.cpp" "/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o"
   )

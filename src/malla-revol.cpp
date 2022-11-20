@@ -97,6 +97,7 @@ Cono:: Cono(const int num_verts_per, const unsigned nperfiles)
    std::vector<Tupla3f> perfil;
    for(int i=0; i<num_verts_per; i++){
       perfil.push_back({1.0-1.0*i/(num_verts_per-1), 1.0*i/(num_verts_per-1), 0.0});
+      //perfil.push_back({i / (num_verts_per - 1), -i / (num_verts_per - 1) + 1, 0.0});   
    }
    inicializar(perfil, nperfiles);
 }
@@ -118,5 +119,6 @@ Esfera:: Esfera(const int num_verts_per, const unsigned nperfiles)
    perfil.push_back({0.0, -1.0, 0.0});
 
    inicializar(perfil, nperfiles);
+   
 }
 

@@ -126,7 +126,7 @@ class Objeto3D
 
 
 
-   protected: // -----
+   //protected: // -----
 
       // actualiza el valor de un parámetro a un instante de tiempo
       //  iParam : índice del parámetro (entre 0 y numParametros()-1 )

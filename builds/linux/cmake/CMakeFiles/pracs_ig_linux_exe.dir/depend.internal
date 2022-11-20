@@ -67,9 +67,11 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o
  /home/alvaro/IG/practica1/src/camara.h
  /home/alvaro/IG/practica1/src/escena.cpp
  /home/alvaro/IG/practica1/src/escena.h
+ /home/alvaro/IG/practica1/src/grafo-escena.h
  /home/alvaro/IG/practica1/src/malla-ind.h
  /home/alvaro/IG/practica1/src/malla-revol.h
  /home/alvaro/IG/practica1/src/materiales-luces.h
+ /home/alvaro/IG/practica1/src/modelo-jer.h
  /home/alvaro/IG/practica1/src/objeto3d.h
  /home/alvaro/IG/practica1/src/practicas.h
  /home/alvaro/IG/practica1/src/seleccion.h
@@ -139,6 +141,22 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.
  /home/alvaro/IG/practica1/src/escena.h
  /home/alvaro/IG/practica1/src/materiales-luces.cpp
  /home/alvaro/IG/practica1/src/materiales-luces.h
+ /home/alvaro/IG/practica1/src/practicas.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o
+ ../../../materiales/src-cpp/cauce.h
+ ../../../materiales/src-cpp/fbo.h
+ ../../../materiales/src-cpp/ig-aux.h
+ ../../../materiales/src-cpp/lector-jpg.h
+ ../../../materiales/src-cpp/tup_mat.h
+ /home/alvaro/IG/practica1/src/camara.h
+ /home/alvaro/IG/practica1/src/escena.h
+ /home/alvaro/IG/practica1/src/grafo-escena.h
+ /home/alvaro/IG/practica1/src/malla-ind.h
+ /home/alvaro/IG/practica1/src/malla-revol.h
+ /home/alvaro/IG/practica1/src/materiales-luces.h
+ /home/alvaro/IG/practica1/src/modelo-jer.cpp
+ /home/alvaro/IG/practica1/src/modelo-jer.h
+ /home/alvaro/IG/practica1/src/objeto3d.h
  /home/alvaro/IG/practica1/src/practicas.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o
  ../../../materiales/src-cpp/cauce.h
