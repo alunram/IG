@@ -84,6 +84,8 @@ CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/escena.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/grafo-escena.cpp
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/grafo-escena.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/malla-ind.h
+CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/malla-revol.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/materiales-luces.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/objeto3d.h
 CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o: /home/alvaro/IG/practica1/src/practicas.h

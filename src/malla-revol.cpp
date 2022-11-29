@@ -1,3 +1,4 @@
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 // *********************************************************************
 // **
 // ** Informática Gráfica, curso 2019-20
@@ -110,10 +111,12 @@ Esfera:: Esfera(const int num_verts_per, const unsigned nperfiles)
 
    perfil.push_back({0.0, 1.0, 0.0});
 
-   for (int i = 1; i < num_verts_per-1; i++)
+   for (int i = 0; i < num_verts_per; i++)
    {
-      double angulo = (M_PI/2 - M_PI * i /(num_verts_per-2));
-      perfil.push_back({cos(angulo), sin(angulo), 0.0});
+      double angulo = (-M_PI/2 + M_PI * i /(num_verts_per-1));
+      perfil.push_back({float(cos(angulo)), float(sin(angulo)), 0.0});
+      //perfil.push_back({float(cos(M_PI * i / (num_verts_per - 1) - M_PI / 2)), float(sin(M_PI * i / (num_verts_per - 1) + M_PI / 2)), 0});
+
    }
 
    perfil.push_back({0.0, -1.0, 0.0});
@@ -122,3 +125,88 @@ Esfera:: Esfera(const int num_verts_per, const unsigned nperfiles)
    
 }
 
+circunferenciaprueba:: circunferenciaprueba(const int num_verts_per, const unsigned nperfiles)
+{
+   ponerNombre( std::string("prueba de hacer una circunferencia"));
+
+   std::vector<Tupla3f> perfil;
+   perfil.push_back({0.0, 0.0, 0.0});
+   perfil.push_back({1.0, 0.0, 0.0});
+   //for(int i=0; i<num_verts_per; i++){
+      //perfil.push_back({1.0-1.0*i/(num_verts_per-1), 1.0*i/(num_verts_per-1), 0.0});
+      //perfil.push_back({i / (num_verts_per - 1), -i / (num_verts_per - 1) + 1, 0.0});   
+   //}
+   inicializar(perfil, nperfiles);
+}
+
+// *****************************************************************************
+
+//He hecho dos versiones, ninguna sale del todo bien. La primera sale recta, no se hace bien el angulo.
+//La segunda, que esta abajo comentada, tiene forma redondeada pero no como la de la foto. No consigo hacer bien la forma
+CopaRevol:: CopaRevol(const int num_verts_per, const unsigned nperfiles)
+{
+   ponerNombre( std::string("Copa revolucion"));
+
+   std::vector<Tupla3f> perfil;
+
+   //añado los de la base de la copa;
+   perfil.push_back({1.0, -0.1, 0.0});
+   perfil.push_back({1.0, 0.0, 0.0});
+
+   float numvertcirc = (num_verts_per-2) / 2;
+   //añado los de la primera circunferencia
+   for (int i = (num_verts_per-2)/2; i > 0; i--)
+   {
+      //double angulo = (3*M_PI/4 - M_PI / 2 * i /((num_verts_per-2)/2));
+      double angulo = (M_PI / 2  * (i /numvertcirc));
+      perfil.push_back({float(1.0 - 0.8*cos(angulo)), float(0.1 +  0.8*cos(angulo)), 0.0});
+      //perfil.push_back({float(cos(M_PI * i / (num_verts_per - 1) - M_PI / 2)), float(sin(M_PI * i / (num_verts_per - 1) + M_PI / 2)), 0});
+
+   }
+
+   //añado los de la segunda circunferencia
+   for (int i = 0; i < (num_verts_per-2)/2; i++)
+   {
+      double angulo = (M_PI / 2  * (i /numvertcirc));
+      //double angulo = (-M_PI/2 - M_PI /2  * i /(num_verts_per-2) / 2);
+      perfil.push_back({float(0.2 + 0.8*cos(angulo)), float(0.9 + 0.8*cos(angulo)), 0.0});
+      //perfil.push_back({float(cos(M_PI * i / (num_verts_per - 1) - M_PI / 2)), float(sin(M_PI * i / (num_verts_per - 1) + M_PI / 2)), 0});
+   }
+
+   //no sale bien, hago mal los angulos
+   inicializar(perfil, nperfiles);
+   
+}
+
+/*CopaRevol:: CopaRevol(const int num_verts_per, const unsigned nperfiles)
+{
+   ponerNombre( std::string("Copa revolucion"));
+
+   std::vector<Tupla3f> perfil;
+
+   //añado los de la base de la copa;
+   perfil.push_back({1.0, -0.1, 0.0});
+   perfil.push_back({1.0, 0.0, 0.0});
+
+   float numvertcirc = (num_verts_per-2) / 2;
+   //añado los de la primera circunferencia
+   for (int i = 0; i < (num_verts_per-1)/2; i++)
+   {
+      //double angulo = (3*M_PI/4 - M_PI / 2 * i /((num_verts_per-2)/2));
+      double angulo = (M_PI / 2  * (i /numvertcirc));
+      perfil.push_back({float(1.0 - 0.8*cos(angulo)), float(0.1 +  0.8*sin(angulo)), 0.0});
+      //perfil.push_back({float(cos(M_PI * i / (num_verts_per - 1) - M_PI / 2)), float(sin(M_PI * i / (num_verts_per - 1) + M_PI / 2)), 0});
+
+   }
+
+   //añado los de la segunda circunferencia
+   for (int i = 0; i < (num_verts_per-1)/2; i++)
+   {
+      double angulo = (M_PI / 2  * (i /numvertcirc));
+      //double angulo = (-M_PI/2 - M_PI /2  * i /(num_verts_per-2) / 2);
+      perfil.push_back({float(0.2 + 0.8*cos(angulo)), float(0.95 + 0.8*sin(angulo)), 0.0});
+   }
+
+   inicializar(perfil, nperfiles);
+   
+}*/

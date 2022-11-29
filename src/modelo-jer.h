@@ -1,3 +1,4 @@
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 // Práctica 3
 // *********************************************************************
 // **
@@ -268,6 +269,30 @@ class GrafoEstrellaX : public NodoGrafoEscena
         virtual void actualizarEstadoParametro(const unsigned iParam, const float tSec);
 };
 
+/*class pruebaexamen : public NodoGrafoEscena
+{
+    protected:
+        unsigned int parametros = 1;
+        Matriz4f *giro = nullptr;
+
+    public:
+        pruebaexamen(unsigned n);
+        virtual unsigned leerNumParametros() const;
+        virtual void actualizarEstadoParametro(const unsigned iParam, const float tSec);
+};
+
+class ahoraborroesto : public NodoGrafoEscena
+{
+    protected:
+        unsigned int parametros = 2;
+        Matriz4f *giro = nullptr;
+         Matriz4f *movimiento = nullptr;
+
+    public:
+        ahoraborroesto(unsigned n);
+        virtual unsigned leerNumParametros() const;
+        virtual void actualizarEstadoParametro(const unsigned iParam, const float tSec);
+};*/
 
 #endif
 

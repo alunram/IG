@@ -1,3 +1,4 @@
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 // *********************************************************************
 // **
 // ** Informática Gráfica, curso 22-23

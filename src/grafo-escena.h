@@ -1,3 +1,4 @@
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 // *********************************************************************
 // **
 // ** Gestión de una grafo de escena (declaraciones)
@@ -24,6 +25,8 @@
 #include "tup_mat.h"
 #include "objeto3d.h"
 #include "materiales-luces.h"
+#include "malla-ind.h"
+#include "malla-revol.h"
 
 using namespace tup_mat ;
 
@@ -99,6 +102,24 @@ class NodoGrafoEscena : public Objeto3D
 
 
 } ;
+
+//aqui deberian ir las clases de los ej adicionales,
+//no en el modelo-jer como las tengo
+
+//EXAMEN P1, P2, P3:
+class Articulado : public NodoGrafoEscena
+{
+    protected:
+        unsigned int parametros = 3;
+        Matriz4f *giroy = nullptr;
+        Matriz4f *giro2 = nullptr;
+        Matriz4f *tamanio = nullptr;
+
+    public:
+        Articulado();
+        virtual unsigned leerNumParametros() const;
+        virtual void actualizarEstadoParametro(const unsigned iParam, const float tSec);
+};
 
 #endif // GRAFO_ESCENA_HPP
 

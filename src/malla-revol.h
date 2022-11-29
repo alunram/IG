@@ -1,4 +1,4 @@
-// *********************************************************************
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J// *********************************************************************
 // **
 // ** Informática Gráfica, curso 2016-17
 // ** Declaraciones de la clase MallaRevol
@@ -28,6 +28,13 @@ class MallaRevol : public MallaInd
    // Método que crea las tablas de vértices, triángulos, normales y cc.de.tt.
    // a partir de un perfil y el número de copias que queremos de dicho perfil.
    void inicializar
+   (
+      const std::vector<Tupla3f> & perfil,     // tabla de vértices del perfil original
+      const unsigned               num_copias  // número de copias del perfil
+   ) ;
+
+   //examen de los otros???
+   void inicializarbis
    (
       const std::vector<Tupla3f> & perfil,     // tabla de vértices del perfil original
       const unsigned               num_copias  // número de copias del perfil
@@ -76,6 +83,30 @@ class Esfera : public MallaRevol
    // Constructor: crea el perfil original y llama a inicializar
    // la esfera tiene el centro en el origen, el radio es la unidad
    Esfera
+   (
+      const int num_verts_per,    // número de vértices del perfil original (M)
+      const unsigned nperfiles   // número de perfiles (N)
+   );
+};
+
+class circunferenciaprueba : public MallaRevol
+{
+   public:
+   // Constructor: crea el perfil original y llama a inicializar
+   // la esfera tiene el centro en el origen, el radio es la unidad
+   circunferenciaprueba
+   (
+      const int num_verts_per,    // número de vértices del perfil original (M)
+      const unsigned nperfiles   // número de perfiles (N)
+   );
+};
+
+class CopaRevol : public MallaRevol
+{
+   public:
+   // Constructor: crea el perfil original y llama a inicializar
+   // la esfera tiene el centro en el origen, el radio es la unidad
+   CopaRevol
    (
       const int num_verts_per,    // número de vértices del perfil original (M)
       const unsigned nperfiles   // número de perfiles (N)

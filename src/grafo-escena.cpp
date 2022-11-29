@@ -1,3 +1,4 @@
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 // *********************************************************************
 // **
 // ** Gestión de una grafo de escena (implementación)
@@ -20,6 +21,8 @@
 
 #include "ig-aux.h"
 #include "grafo-escena.h"
+#include "malla-ind.h"
+#include "malla-revol.h"
 
 using namespace std ;
 
@@ -279,4 +282,102 @@ bool NodoGrafoEscena::buscarObjeto
 
    // ni este nodo ni ningún hijo es el buscado: terminar
    return false ;
+}
+
+
+//los adicionales estan en el modelo-jer
+//EXAMEN P1, P2, P3
+Articulado::Articulado(){
+    NodoGrafoEscena *cubo = new NodoGrafoEscena();
+    NodoGrafoEscena *objeto = new NodoGrafoEscena();
+    NodoGrafoEscena *cilindro = new NodoGrafoEscena();
+    NodoGrafoEscena *cilindroconesfera1 = new NodoGrafoEscena();
+    NodoGrafoEscena *cilindroconesfera2 = new NodoGrafoEscena();
+    NodoGrafoEscena *cilindroconesfera3 = new NodoGrafoEscena();
+    NodoGrafoEscena *cilindrosconesferas = new NodoGrafoEscena();
+
+   cubo->agregar(MAT_Escalado(0.5, 0.5, 0.5));
+   cubo->agregar(MAT_Traslacion({0.0, 1.0, 0.0}));
+   cubo->agregar(new Cubo());
+
+   objeto->agregar(cubo);
+
+   cilindro->agregar(MAT_Escalado(0.25, 0.5, 0.25));
+   cilindro->agregar(new Cilindro(20,20));
+   cilindro->agregar(MAT_Traslacion({0.0, 1.0, 0.0}));
+   cilindro->agregar(new Cilindro(20,20));
+   cilindro->agregar(MAT_Traslacion({0.0, 1.0, 0.0}));
+   cilindro->agregar(new Cilindro(20,20));
+
+   //cilindroconesfera->agregar(MAT_Traslacion({0.0, 1.0, 0.0}));
+   cilindroconesfera1->agregar(cilindro);
+   cilindroconesfera1->agregar(MAT_Traslacion({0.0, 1.5, 0.0}));
+   cilindroconesfera1->agregar(MAT_Escalado(0.25, 0.25, 0.25));
+   cilindroconesfera1->agregar(new Esfera(20,20));
+
+   unsigned int ind1 = cilindrosconesferas->agregar(MAT_Rotacion(0, {0.0, 1.0, 0.0}));
+   giroy = cilindrosconesferas->leerPtrMatriz(ind1);
+   cilindrosconesferas->agregar(MAT_Traslacion({0.0, 1.0, 0.0}));
+   cilindrosconesferas->agregar(cilindroconesfera1);
+
+   unsigned int ind3 = cilindroconesfera2->agregar(MAT_Escalado(1, 1, 1));
+   cilindroconesfera2->agregar(MAT_Traslacion({0.0, 1.5, 0.0}));
+   cilindroconesfera2->agregar(MAT_Rotacion(-75, {0, 0, 1}));
+   cilindroconesfera2->agregar(cilindroconesfera1);
+   tamanio = cilindroconesfera2->leerPtrMatriz(ind3);
+
+   unsigned int ind2 = cilindrosconesferas->agregar(MAT_Rotacion(0, {0.0, 0.0, 1.0})); //este giro no me sale bien
+   giro2 = cilindrosconesferas->leerPtrMatriz(ind2);
+
+   cilindrosconesferas->agregar(cilindroconesfera2);
+
+   cilindroconesfera3->agregar(MAT_Traslacion({0.0, 1.5, 0.0}));
+   cilindroconesfera3->agregar(MAT_Rotacion(-75, {0, 0, 1}));
+   cilindroconesfera3->agregar(MAT_Traslacion({0.0, 1.5, 0.0}));
+   cilindroconesfera3->agregar(MAT_Rotacion(270, {0, 0, 1}));
+   cilindroconesfera3->agregar(cilindroconesfera1);
+
+   cilindrosconesferas->agregar(cilindroconesfera3);
+
+   objeto->agregar(cilindrosconesferas);
+   
+   agregar(objeto);
+
+}
+
+unsigned Articulado::leerNumParametros() const
+{
+   return parametros;
+}
+
+void Articulado::actualizarEstadoParametro(const unsigned iParam, const float tSec){
+    const float velocidad = 2*M_PI*2.5;
+    float angulo = 2 * M_PI * tSec * velocidad ;
+
+    float a = -75;
+    float b = 40;
+    float c = a + b * sin(2.0 * M_PI * tSec*0.1);
+
+    float d = 0.7;
+    float e = 0.4;
+    float f = d + e * fabs(sin(2.0 * M_PI * tSec*0.3));
+   
+
+    using namespace std;
+    cout << "Parametro: " << iParam << endl;
+
+    switch (iParam)
+    {
+      case 0:
+        (*giroy) = MAT_Rotacion(angulo, {0, 1, 0}); //una vuelta cada 5 seg
+        break;
+      case 1:
+        //(*giro2) = MAT_Rotacion(c, {0, 0, 1});   //no me sale bien
+        break;
+      case 2:
+        (*tamanio) = MAT_Escalado(f, 1, 1); //al estar girado la longitud de los cilindros es el eje x
+        break;
+    default:
+        break;
+    }
 }

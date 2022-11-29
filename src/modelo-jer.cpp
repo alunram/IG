@@ -1,3 +1,4 @@
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 // Práctica 3
 // *********************************************************************
 // **
@@ -533,7 +534,7 @@ Rampa :: Rampa(){
 }
 
 //------------------------------------------------------------------------------------
-//EJERCICIOS ADICIONALES:
+//EJERCICIOS ADICIONALES P3:
 
 //Ejercicio adicional 2: Grafo Cubos
 GrafoCubos::GrafoCubos(){
@@ -567,6 +568,7 @@ GrafoCubos::GrafoCubos(){
     agregar(MAT_Traslacion({-3.0, 0.0, 0.0}));
     agregar(new Cubo()); */   
 
+    //los nombres de las rejillas y cubos estan regular elegidos pero bueno
     NodoGrafoEscena *rejillasy = new NodoGrafoEscena();
     RejillaY *unarejillay = new RejillaY(10, 10);
     rejillasy->agregar(MAT_Traslacion({-0.5, -0.5, -0.5}));
@@ -692,4 +694,126 @@ void GrafoEstrellaX::actualizarEstadoParametro(const unsigned iParam, const floa
         break;
     }
 }
+
+
+//------------------------------------------------------------------------------------------------------------
+/*pruebaexamen :: pruebaexamen(unsigned n){
+    //ejercicio de isa, cubos entrelazados:
+    /*assert(n>1);
+    //agregar(MAT_Escalado(0.5, 0.5, 0.5));
+    agregar(new Cubo());
+
+    for(int i=0;i<n;i++){
+        if(i%2==0){   
+            agregar(MAT_Traslacion({+1.0, 0.0, +1.0}));
+            agregar(MAT_Rotacion(135, {0.0, 1.0, 0.0}));
+            agregar(MAT_Traslacion({-1.0, 0.0, -1.0}));
+            agregar(new Cubo());
+        }else{
+            agregar(MAT_Rotacion(-135, {0.0, 1.0, 0.0}));
+            agregar(MAT_Traslacion({+1.0, 0.0, float(+1.0+sqrt(2))}));
+            agregar(new Cubo());
+        }
+    }*/
+
+    //ejercicio parecido al examen
+   /* NodoGrafoEscena *parteabajo = new NodoGrafoEscena();
+    NodoGrafoEscena *partearriba = new NodoGrafoEscena();
+    NodoGrafoEscena *ruedas = new NodoGrafoEscena();
+    NodoGrafoEscena *unarueda = new NodoGrafoEscena();
+    NodoGrafoEscena *unaruedagirada = new NodoGrafoEscena();
+
+    unarueda->agregar(MAT_Traslacion({0.0, -0.5, 0.0}));
+    unarueda->agregar(new Cilindro(20,20));
+    unarueda->agregar(MAT_Traslacion({0.0, +0.5, 0.0}));
+    unarueda->agregar(MAT_Escalado(0.7, 0.5, 0.7)); 
+    unarueda->agregar(new Cubo());
+
+    unsigned int ind = unaruedagirada->agregar(MAT_Rotacion(0, {0.0, 0.0, 1.0}));
+    unaruedagirada->agregar(MAT_Rotacion(90, {1,0,0}));
+    unaruedagirada->agregar(unarueda);
+
+    ruedas->agregar(MAT_Traslacion({1.0, 0.0, 0.0}));
+    ruedas->agregar(unaruedagirada);
+    ruedas->agregar(MAT_Traslacion({3.5, 0.0, 0.0}));
+    ruedas->agregar(unaruedagirada);
+    ruedas->agregar(MAT_Traslacion({0.0, 0.0, 5.0}));
+    ruedas->agregar(unaruedagirada);
+    ruedas->agregar(MAT_Traslacion({-3.5, 0.0, 0.0}));
+    ruedas->agregar(unaruedagirada);
+
+
+    parteabajo->agregar(MAT_Traslacion({2.5, +1.0, 2.5}));
+    parteabajo->agregar(MAT_Escalado(2, 0.5, 2)); 
+    parteabajo->agregar(new Cubo());
+
+    partearriba->agregar(MAT_Traslacion({2.5, +2, 2.5}));
+    partearriba->agregar(MAT_Escalado(1.5, 0.75, 1.5)); 
+    partearriba->agregar(new Cubo());
+
+    agregar(ruedas);
+    agregar(parteabajo);
+    agregar(partearriba);
+    giro = unaruedagirada->leerPtrMatriz(ind);
+}
+
+unsigned pruebaexamen::leerNumParametros() const
+{
+   return parametros;
+}
+
+void pruebaexamen::actualizarEstadoParametro(const unsigned iParam, const float tSec){
+    const float velocidad = 2*M_PI*1.3*2.5;
+    float angulo = 2 * velocidad * M_PI * tSec;
+
+    using namespace std;
+    cout << "Parametro: " << iParam << endl;
+    switch (iParam)
+    {
+    case 0:
+        (*giro) = MAT_Rotacion(angulo, {0, 0, 1});
+        break;
+    default:
+        break;
+    }
+}
+
+//-----------------------------------------------------------------------------------------------------------------
+ahoraborroesto :: ahoraborroesto(unsigned n){
+    unsigned int ind = agregar(MAT_Traslacion({0.0, 0.0, 0.0}));
+    unsigned int ind2 = agregar(MAT_Rotacion(0, {0, 0, 1}));
+    agregar(MAT_Escalado(1, 4, 1)); 
+    agregar(new Cilindro(20,20));
+    movimiento = leerPtrMatriz(ind);
+    giro = leerPtrMatriz(ind2);
+}
+
+unsigned ahoraborroesto::leerNumParametros() const
+{
+   return parametros;
+}
+
+void ahoraborroesto::actualizarEstadoParametro(const unsigned iParam, const float tSec){
+    float a = 0.0;
+    float b = 4.5;
+    float c = a +  b * fabs(sin(2.0 * M_PI * tSec * 0.1));
+    float d = 0;
+    float e = 90;
+    float f = d +  e * fabs(sin(2.0 * M_PI * tSec * 0.1));
+
+    using namespace std;
+    cout << "Parametro: " << iParam << endl;
+    switch (iParam)
+    {
+        case 0:
+            *movimiento = MAT_Traslacion({c, 0.0, 0.0});
+        break;
+        case 1:
+            *giro = MAT_Rotacion(f, {0, 0, 1});
+            break;
+    default:
+        break;
+    }
+}
+*/
 

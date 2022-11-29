@@ -1,4 +1,4 @@
-
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
 
 #include "ig-aux.h"
 #include "escena.h"
@@ -202,7 +202,7 @@ Escena1::Escena1()
    cout << "Creando objetos de escena 1 .... " << flush;
 
    // añadir el objeto 'Cubo' a la lista de objetos de esta escena:
-   objetos.push_back(new Cubo());
+   //objetos.push_back(new Cubo());
 
    // COMPLETAR: Práctica 1: creación del resto objetos de la práctica 1
    // Añadir objetos al vector 'objetos', con:
@@ -210,16 +210,18 @@ Escena1::Escena1()
    // .........
    //mio:
    unsigned nestrella = 8;
-   objetos.push_back(new Rueda(50));
-   objetos.push_back(new CuboTejado());
-   objetos.push_back(new Tetraedro()); 
+   objetos.push_back(new PiramideCruz());
+   //objetos.push_back(new Rueda(50));
+   //objetos.push_back(new CuboTejado());
+   //objetos.push_back(new Tetraedro()); 
    // cuando haga mas objetos se veran poniendolo aqui
-   objetos.push_back(new CuboColores());
-   objetos.push_back(new EstrellaZ(nestrella));
-   objetos.push_back(new CasaX());
-   objetos.push_back(new MallaTriangulo());
-   objetos.push_back(new MallaCuadrado());
-   objetos.push_back(new MallaPiramideL());
+   //objetos.push_back(new CuboColores());
+   //objetos.push_back(new EstrellaZ(nestrella));
+   //objetos.push_back(new CasaX());
+   //objetos.push_back(new MallaTriangulo());
+   //objetos.push_back(new MallaCuadrado());
+   //objetos.push_back(new MallaPiramideL());
+   //objetos.push_back(new examenlunes());
 
    cout << "hecho." << endl
         << flush;
@@ -239,17 +241,19 @@ Escena2::Escena2()
 
 
    //aquí pondré los objetos.push_back();
-   objetos.push_back(new Cilindro(20, 20));
-   objetos.push_back(new Cilindro(50, 50));
-   objetos.push_back(new Cono(15, 35));
-   objetos.push_back(new MallaRevolPLY("peon.ply", 20));
-   objetos.push_back(new MallaPLY("ant.ply"));
-   objetos.push_back(new MallaPLY("beethoven.ply"));
-   objetos.push_back(new MallaPLY("big_dodge.ply"));
-   objetos.push_back(new Esfera(40, 40));
-   objetos.push_back(new PiramideEstrellaZ(8));
-   objetos.push_back(new RejillaY(10,10));
-   objetos.push_back(new MallaTorre(5));
+   //objetos.push_back(new Cilindro(20, 20));
+   objetos.push_back(new CopaRevol(32, 32));
+   //objetos.push_back(new Cilindro(50, 50));
+   //objetos.push_back(new Cono(15, 35));
+   //objetos.push_back(new MallaRevolPLY("peon.ply", 20));
+   //objetos.push_back(new MallaPLY("ant.ply"));
+   //objetos.push_back(new MallaPLY("beethoven.ply"));
+   //objetos.push_back(new MallaPLY("big_dodge.ply"));
+   //objetos.push_back(new Esfera(40, 40));
+   //objetos.push_back(new PiramideEstrellaZ(8));
+   //objetos.push_back(new RejillaY(10,10));
+   //objetos.push_back(new MallaTorre(5));
+   //objetos.push_back(new circunferenciaprueba(1,20)); //es una circunferencia
    
 
    cout << "hecho." << endl
@@ -269,10 +273,13 @@ Escena3:: Escena3()
    cout << "Creando objetos de escena 3 .... " << flush;
 
    //aquí pondré los objetos.push_back();
+   //objetos.push_back(new ahoraborroesto(10));
+   objetos.push_back(new Articulado());
    objetos.push_back(new P3());
-   objetos.push_back(new Bici());
-   objetos.push_back(new GrafoEstrellaX(6));
-   objetos.push_back(new GrafoCubos());
+   //objetos.push_back(new Bici());
+   //objetos.push_back(new GrafoEstrellaX(6));
+   //objetos.push_back(new GrafoCubos());
+   //objetos.push_back(new pruebaexamen(5));
 
 
    cout << "hecho." << endl
