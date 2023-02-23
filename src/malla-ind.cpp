@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Informática Gráfica, curso 2020-21
@@ -46,6 +46,19 @@ void MallaInd::calcularNormalesTriangulos()
 
    // COMPLETAR: Práctica 4: creación de la tabla de normales de triángulos
    // ....
+   //mio:
+   for (int i = 0; i < nt; i++)
+   {
+      Tupla3f a = vertices[triangulos[i](1)] - vertices[triangulos[i](0)];
+      Tupla3f b = vertices[triangulos[i](2)] - vertices[triangulos[i](0)];
+      Tupla3f normal_tri = a.cross(b); //producto vectorial
+
+      if (normal_tri.lengthSq() != 0.0) normal_tri = normal_tri.normalized();
+         else normal_tri = {0.0, 0.0, 0.0};
+
+      nor_tri.push_back(normal_tri);
+   }
+   
 }
 
 // -----------------------------------------------------------------------------
@@ -56,12 +69,45 @@ void MallaInd::calcularNormales()
    // COMPLETAR: en la práctica 4: calculo de las normales de la malla
    // se debe invocar en primer lugar 'calcularNormalesTriangulos'
    // .......
+
+   calcularNormalesTriangulos();
+
+
+   //...............
+   //mio:
+   nor_ver = std::vector<Tupla3f>( vertices.size(), Tupla3f(0.0, 0.0, 0.0));
+
+   for (int i = 0; i < triangulos.size(); i++)
+   {
+      for (int j = 0; j < 3; j++)
+      {
+         unsigned int indice = triangulos[i][j];
+         nor_ver[indice] = nor_tri[i] + nor_ver[indice];
+      }
+      
+   }
+
+   //normalizar:
+   for (unsigned int i = 0; i < nor_ver.size(); i++)
+    {
+        if (nor_ver[i].lengthSq() != 0.0)
+            nor_ver[i] = nor_ver[i].normalized();
+    }
+
 }
+
+
 
 // --------------------------------------------------------------------------------------------
 
 void MallaInd::visualizarGL(ContextoVis &cv)
 {
+   leerFijarColVertsCauce(cv);
+   if ( cv.visualizando_normales )
+   {  
+      visualizarNormales( cv );
+      return ;
+   }
 
    using namespace std;
    assert(cv.cauce != nullptr);
@@ -104,6 +150,16 @@ void MallaInd::visualizarGL(ContextoVis &cv)
       //esto me lo dice isa, no estoy seguro:
       //nombre_vbo_nor = CrearVBOAtrib(ind_atrib_normales, nor_ver);
       //nombre_vbo_cct = CrearVBOAtrib(ind_atrib_coord_text, cc_tt_ver);
+
+      if (nor_ver.size() > 0)
+      {
+         nombre_vbo_nor = CrearVBOAtrib(ind_atrib_normales, nor_ver);
+      }
+
+      if (cc_tt_ver.size() > 0)
+      {
+         nombre_vbo_cct = CrearVBOAtrib(ind_atrib_coord_text, cc_tt_ver);
+      }
 
       CError();
       // CrearVBOAtrib(nombre_vao, TABLA DE ATRIBUTOS(OPCIONALES)); //FALTA ESTO¿?¿?¿?
@@ -170,6 +226,34 @@ void MallaInd::visualizarGeomGL(ContextoVis &cv)
    CError();
 }
 
+void MallaInd::visualizarNormales( ContextoVis & cv )
+{
+   using namespace std ;
+
+   if ( nor_ver.size() == 0 )
+   {
+      cout << "Advertencia: intentando dibujar normales de una malla que no tiene tabla (" << leerNombre() << ")." << endl ;
+      return ;
+   }  
+   if ( nombre_vao_normales == 0 )
+   {  
+      for( unsigned i = 0 ; i < vertices.size() ; i++ )
+      {  
+         segmentos_normales.push_back( vertices[i] );
+         segmentos_normales.push_back( vertices[i]+ 0.35f*(nor_ver[i]) );
+      }
+      nombre_vao_normales = CrearVAO();
+      CrearVBOAtrib( ind_atrib_posiciones, segmentos_normales );   
+   }
+   else 
+      glBindVertexArray( nombre_vao_normales );
+
+   cv.cauce->fijarColor( 1.0, 0.5, 0.2 ); // fijar el color (rojo), con el VAO activado.
+   glDrawArrays( GL_LINES, 0, segmentos_normales.size() );
+   glBindVertexArray( 0 );
+   CError();
+}
+
 // ****************************************************************************
 // Clase 'MallaPLY'
 
@@ -184,6 +268,7 @@ MallaPLY::MallaPLY(const std::string &nombre_arch)
 
    // COMPLETAR: práctica 4: invocar  a 'calcularNormales' para el cálculo de normales
    // .................
+   calcularNormales();
 }
 
 // ****************************************************************************
@@ -221,6 +306,8 @@ Cubo::Cubo()
            {1, 5, 7},
            {1, 7, 3} // Z+ (+1)
        };
+
+       calcularNormales();
 }
 
 // ****************************************************************************
@@ -288,7 +375,8 @@ Tetraedro::Tetraedro()
        };
 
    ponerColor({1.0, 1.0, -2.0});
-   // calcularNormales();
+
+   calcularNormales();
 }
 
 // ------------------------------------
@@ -728,6 +816,34 @@ SillinBici::SillinBici()
            {1, 7, 3} // Z+ (+1)
        };
 
+      
+
+}
+
+Pegatina :: Pegatina()
+:MallaInd("Pegatina")
+{
+   vertices =
+       {
+           {-0.5, +0.25, -0.5}, // 2
+           {-0.5, +0.25, +0.5}, // 3
+           {+1.0, +0.25, -0.5}, // 6
+           {+1.0, +0.25, +0.5}, // 7
+       };
+
+   triangulos =
+       {
+           {0, 1, 2}, {3,2,1}
+       };
+
+   cc_tt_ver = {
+        {0.0, 0.0}, // 2
+        {0.0, 1.0}, // 3
+        {1.0, 0.0}, // 6
+        {1.0, 1.0}, // 7
+   };
+
+   calcularNormales();
 }
 
 BielaBici :: BielaBici()
@@ -837,6 +953,15 @@ RampaBici::RampaBici()
        {
            {0, 1, 2}, {2, 3, 1}
        };
+
+   cc_tt_ver = {
+        {0.0, 0.0}, // 0
+        {1.0, 0.0}, // 1
+        {0.0, 1.0}, // 2
+        {1.0, 1.0}, // 3
+      };
+
+   calcularNormales();
 }
 
 //EXAMEN P1, P2, P3
@@ -882,4 +1007,199 @@ PiramideCruz :: PiramideCruz ()
          {0.75, 1.0, 0.5}, //12
       };
 }
-      
+
+
+//P4. CUBO24:
+Cubo24::Cubo24()
+    : MallaInd("cubo 24 vértices")
+{
+
+   vertices =
+      {
+         // 1: 0-3
+         {-1.0, -1.0, -1.0}, //0
+         {-1.0, -1.0, +1.0}, //1
+         {-1.0, +1.0, -1.0}, //2
+         {-1.0, +1.0, +1.0}, //3
+
+         // 2: 4-7
+         {-1.0, -1.0, -1.0}, //4
+         {-1.0, -1.0, +1.0}, //5
+         {+1.0, -1.0, -1.0}, //6
+         {+1.0, -1.0, +1.0},  //7
+
+         // 3: 8-11
+         {-1.0, -1.0, -1.0}, //8
+         {-1.0, +1.0, -1.0}, //9
+         {+1.0, -1.0, -1.0}, //10
+         {+1.0, +1.0, -1.0},  //11
+
+         // 4: 12-15
+         {-1.0, -1.0, +1.0}, //12
+         {-1.0, +1.0, +1.0}, //13
+         {+1.0, -1.0, +1.0},  //14
+         {+1.0, +1.0, +1.0}, //15
+
+         // 5: 16-19
+         {-1.0, +1.0, -1.0}, //16
+         {-1.0, +1.0, +1.0}, //17
+         {+1.0, +1.0, -1.0},  //18
+         {+1.0, +1.0, +1.0}, //19
+
+         // 6: 20-23
+         {+1.0, -1.0, -1.0}, //20
+         {+1.0, +1.0, -1.0},  //21
+         {+1.0, -1.0, +1.0},  //22
+         {+1.0, +1.0, +1.0}, //23
+       };
+
+   triangulos =
+       {
+           {0, 1, 3}, {0, 3, 2}, // X-
+
+           {20,23,22},
+           {20,21,23}, // X+ (+4)
+
+           {4, 7, 5},
+           {4, 6, 7}, // Y-
+
+           {19, 16, 17},
+           {19, 18, 16}, // Y+ (+2)
+
+           {8, 9, 11},
+           {8, 11, 10}, // Z-
+
+           {12, 15, 13},
+           {12, 14, 15}, // Z+ (+1)
+       };
+
+      cc_tt_ver = {
+        {0.0, 1.0 - 0.0}, // 0
+        {1.0, 1.0 - 0.0}, // 1
+        {0.0, 1.0 - 1.0}, // 2
+        {1.0, 1.0 - 1.0}, // 3
+
+        {0.0, 1.0 - 1.0}, // 4
+        {0.0, 1.0 - 0.0}, // 5
+        {1.0, 1.0 - 1.0}, // 6
+        {1.0, 1.0 - 0.0}, // 7
+
+        {1.0, 1.0 - 0.0}, // 8
+        {1.0, 1.0 - 1.0}, // 9
+        {0.0, 1.0 - 0.0}, // 10
+        {0.0, 1.0 - 1.0}, // 11
+
+        {0.0, 1.0 - 0.0}, // 12
+        {0.0, 1.0 - 1.0}, // 13
+        {1.0, 1.0 - 0.0}, // 14
+        {1.0, 1.0 - 1.0}, // 15
+
+        {0.0, 1.0 - 1.0}, // 16
+        {0.0, 1.0 - 0.0}, // 17
+        {1.0, 1.0 - 1.0}, // 18
+        {1.0, 1.0 - 0.0}, // 19
+
+        {1.0, 1.0 - 0.0}, // 20
+        {1.0, 1.0 - 1.0}, // 21
+        {0.0, 1.0 - 0.0}, // 22
+        {0.0, 1.0 - 1.0}, // 23
+      };
+
+      calcularNormales();
+}
+
+MallaDiscoP4::MallaDiscoP4()
+   : MallaInd("Malla disco P4")
+{
+   ponerColor({1.0, 1.0, 1.0});
+   const unsigned ni = 23, nj = 31 ;
+
+   for( unsigned i= 0 ; i < ni ; i++ )
+      for( unsigned j= 0 ; j < nj ; j++ )
+      {
+         const float
+         fi = float(i)/float(ni-1),
+         fj = float(j)/float(nj-1),
+         ai = 2.0*M_PI*fi,
+         x = fj * cos( ai ),
+         y = fj * sin( ai ),
+         z = 0.0 ;
+
+         vertices.push_back({ x, y, z });
+
+         //ej1:
+         float x2 = x * 0.5 + 0.5;
+         float y2 = y * 0.5 + 0.5;
+         //cc_tt_ver.push_back({x2, y2});
+
+         //ej2:
+         cc_tt_ver.push_back({fj, ai / (2 * M_PI)}); // o (fi,fj) o (fj,fi)
+      }
+
+   for( unsigned i= 0 ; i < ni-1 ; i++ )
+      for( unsigned j= 0 ; j < nj-1 ; j++ )
+      {
+         triangulos.push_back({ i*nj+j, i*nj+(j+1), (i+1)*nj+(j+1) });
+         triangulos.push_back({ i*nj+j, (i+1)*nj+(j+1), (i+1)*nj+j });
+      }
+
+   calcularNormales(); 
+}
+
+//EJERCICIO EXAMEN P4
+MallaEXP4::MallaEXP4()
+   : MallaInd("Malla examen  P4")
+{
+   vertices =
+      {
+         // 1: 0-2
+           {0.0, 0.0, 0.0},  // 0
+           {0.0, +1.0, 0.0},  //1
+           {0.0, 0.0, +1.0}, // 2
+           
+
+         // 2: 3-5
+         {+1.0, 0.0, 0.0}, // 3
+         {0.0, +1.0, 0.0}, //4
+         {0.0, 0.0, 0.0}, //5
+
+         // 3: 6-8
+         {0.0, 0.0, +1.0}, //6
+         {0.0, +1.0, 0.0},  //7
+         {+1.0, 0.0, 0.0}, //8
+
+         //4: 9-11
+         {0.0, 0.0, 0.0}, //9
+         {0.0, 0.0, +1.0}, //10
+         {+1.0, 0.0, 0.0},  //11
+       };
+
+       triangulos =
+       {
+           {0, 1, 2}, 
+           {3, 4, 5}, 
+           {6,7,8},
+           {9,10,11}, 
+       };
+
+       cc_tt_ver = {
+        {1.0, 1.0}, // 0
+        {0.5, 0.0}, // 1
+        {0.0, 1.0}, // 2
+
+        {1.0, 1.0}, // 3
+        {0.5, 0.0}, // 4
+        {0.0, 1.0}, // 5
+
+        {1.0, 1.0}, // 6
+        {0.5, 0.0}, // 7
+        {0.0, 1.0}, // 8
+
+        {0.5, 0.0}, // 9
+        {0.0, 1.0}, // 10
+        {1.0, 1.0}, // 11
+
+      };
+
+       calcularNormales();
+}

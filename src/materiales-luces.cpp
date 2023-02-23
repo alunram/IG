@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Gestión de materiales y texturas (implementación)
@@ -40,6 +40,9 @@ Textura::Textura( const std::string & nombreArchivoJPG )
    // busca en 'materiales/imgs' y si no está se busca en 'archivos-alumno'
    // .....
 
+   //mio
+   imagen = LeerArchivoJPEG( nombreArchivoJPG.c_str(), ancho, alto );
+
 }
 
 // ---------------------------------------------------------------------
@@ -52,6 +55,23 @@ void Textura::enviar()
    // y configurar parámetros de la textura (glTexParameter)
    // .......
 
+   //mio. diapositivas tema 3, seccion 3.1
+   glGenTextures( 1, &ident_textura); // ident_textura = nuevo nombre
+   glActiveTexture( GL_TEXTURE0 ); // siempre usaremos la textura 0
+   glBindTexture( GL_TEXTURE_2D, ident_textura );
+
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, ancho, alto, 0, GL_RGB, GL_UNSIGNED_BYTE, imagen);
+   glGenerateMipmap(GL_TEXTURE_2D);
+
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); //bilineal
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_LINEAR); //mas cercano al centro del pixel
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+   //glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR ); //se usa linear y no nearest
+   //gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, ancho, alto, GL_RGB, GL_UNSIGNED_BYTE, imagen);
+
+   enviada=true; //para llamar a enviar desde activar si todavia no se habia enviado
 }
 
 //----------------------------------------------------------------------
@@ -75,8 +95,31 @@ void Textura::activar( Cauce & cauce  )
    // COMPLETAR: práctica 4: enviar la textura a la GPU (solo la primera vez) y activarla
    // .......
 
+   //mio:
+   if(enviada == false)
+      enviar();
+
+   cauce.fijarEvalText(true, ident_textura);   //habilita las texturas
+   cauce.fijarTipoGCT(modo_gen_ct, coefs_s, coefs_t);    //coordenadas de textura
+
 }
 // *********************************************************************
+//constuctores clases texturaxy y textura xz:
+
+TexturaXY::TexturaXY(const std::string &nom) : Textura(nom)
+{
+   modo_gen_ct = mgct_coords_objeto;
+}
+
+TexturaXZ::TexturaXZ(const std::string &nom) : Textura(nom)
+{
+   modo_gen_ct = mgct_coords_objeto;
+
+   coefs_t[1] = 0.0;
+   coefs_t[2] = 1.0;
+}
+
+//***************************************************************************
 // crea un material usando un color plano y los coeficientes de las componentes
 
 Material::Material( const float p_k_amb, const float p_k_dif,
@@ -129,6 +172,15 @@ void Material::activar( ContextoVis & cv )
    // COMPLETAR: práctica 4: activar un material
    // .....
 
+   //mio:
+   if(textura  != nullptr){
+      textura->activar(*cv.cauce);
+   }else cv.cauce->fijarEvalText(false);
+
+   //cv.cauce.fijarParamsMIL({k_amb, k_amb, k_amb}, {k_dif, k_dif, k_dif}, {k_pse, k_pse, k_pse}, exp_pse);
+   cv.cauce->fijarParamsMIL(this->k_amb, this->k_dif, this->k_pse, this->exp_pse);
+   //en el guion tmb dice algo de que el valor de exp_pse no puede ser bajo (+ la unidad)
+   //¿¿¿???
 
    // registrar el material actual en el cauce
    cv.material_act = this ; 
@@ -192,6 +244,24 @@ void ColFuentesLuz::activar( Cauce & cauce )
    //   - usar el método 'fijarFuentesLuz' del cauce para activarlas
    // .....
 
+   //mio:
+   std::vector<Tupla3f> colores;
+   std::vector<Tupla4f> pos_dir_wc;
+
+   for (int i = 0; i < vpf.size(); i++){
+      colores.push_back(vpf[i]->color);
+
+      //FALTA ESTO: no se como hacerlo, asi no es
+      //pos_dir_wc.push_back(vpf[i]->pos_dir_wc);
+      //es asi:
+      float latitud = (*(vpf)[i]).lati * 2 * M_PI / 360;
+      float longitud = (*(vpf)[i]).longi * 2 * M_PI / 360;
+
+      Tupla4f pos_dir_wc_nueva = {sin(latitud) * cos(longitud), sin(latitud) * sin(longitud), cos(latitud), 0.0};
+      pos_dir_wc.push_back(pos_dir_wc_nueva);
+   }
+
+   cauce.fijarFuentesLuz( colores, pos_dir_wc );
 }
 
 // ---------------------------------------------------------------------

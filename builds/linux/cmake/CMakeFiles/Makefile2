@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alvaro/IG/practica1/builds/linux
+CMAKE_SOURCE_DIR = "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alvaro/IG/practica1/builds/linux/cmake
+CMAKE_BINARY_DIR = "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/pracs_ig_linux_exe.dir/clean
 CMakeFiles/pracs_ig_linux_exe.dir/all:
 	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/depend
 	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target pracs_ig_linux_exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target pracs_ig_linux_exe"
 .PHONY : CMakeFiles/pracs_ig_linux_exe.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pracs_ig_linux_exe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles" 18
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pracs_ig_linux_exe.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles" 0
 .PHONY : CMakeFiles/pracs_ig_linux_exe.dir/rule
 
 # Convenience name for target.

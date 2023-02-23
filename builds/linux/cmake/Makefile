@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alvaro/IG/practica1/builds/linux
+CMAKE_SOURCE_DIR = "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alvaro/IG/practica1/builds/linux/cmake
+CMAKE_BINARY_DIR = "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles /home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles" "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -123,437 +123,464 @@ pracs_ig_linux_exe/fast:
 	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/build
 .PHONY : pracs_ig_linux_exe/fast
 
-home/alvaro/IG/practica1/materiales/src-cpp/cauce.o: home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/cauce.o
-
-# target to build an object file
-home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.o
-
-home/alvaro/IG/practica1/materiales/src-cpp/cauce.i: home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.i
-
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/cauce.i
-
-# target to preprocess a source file
-home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.i
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.i
-
-home/alvaro/IG/practica1/materiales/src-cpp/cauce.s: home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.s
-
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/cauce.s
-
-# target to generate assembly for a file
-home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.s
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/cauce.cpp.s
-
-home/alvaro/IG/practica1/materiales/src-cpp/fbo.o: home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o
-
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/fbo.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.o
 
 # target to build an object file
-home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.o
 
-home/alvaro/IG/practica1/materiales/src-cpp/fbo.i: home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/fbo.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.i
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.i
 
-home/alvaro/IG/practica1/materiales/src-cpp/fbo.s: home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/fbo.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.s
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/fbo.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.cpp.s
 
-home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.o: home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.o
 
 # target to build an object file
-home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.o
 
-home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.i: home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.i
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.i
 
-home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.s: home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.s
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.cpp.s
 
-home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.o: home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.o
 
 # target to build an object file
-home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.o
 
-home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.i: home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.i
 
-home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.s: home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.cpp.s
 
-home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.o: home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.o
 
 # target to build an object file
-home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.o
 
-home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.i: home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.i
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.i
 
-home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.s: home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.s
-.PHONY : home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.cpp.s
 
-home/alvaro/IG/practica1/src/animacion.o: home/alvaro/IG/practica1/src/animacion.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/animacion.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/animacion.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/animacion.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/animacion.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.o
 
-home/alvaro/IG/practica1/src/animacion.i: home/alvaro/IG/practica1/src/animacion.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/animacion.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/animacion.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/animacion.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/animacion.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.i
 
-home/alvaro/IG/practica1/src/animacion.s: home/alvaro/IG/practica1/src/animacion.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/animacion.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/animacion.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/animacion.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/animacion.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.cpp.s
 
-home/alvaro/IG/practica1/src/camara.o: home/alvaro/IG/practica1/src/camara.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/camara.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/camara.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/camara.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/camara.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.o
 
-home/alvaro/IG/practica1/src/camara.i: home/alvaro/IG/practica1/src/camara.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/camara.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/camara.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/camara.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/camara.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.i
 
-home/alvaro/IG/practica1/src/camara.s: home/alvaro/IG/practica1/src/camara.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/camara.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/camara.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/camara.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/camara.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.cpp.s
 
-home/alvaro/IG/practica1/src/escena.o: home/alvaro/IG/practica1/src/escena.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/escena.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/escena.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/escena.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.o
 
-home/alvaro/IG/practica1/src/escena.i: home/alvaro/IG/practica1/src/escena.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/escena.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/escena.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/escena.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.i
 
-home/alvaro/IG/practica1/src/escena.s: home/alvaro/IG/practica1/src/escena.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/escena.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/escena.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/escena.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/escena.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.cpp.s
 
-home/alvaro/IG/practica1/src/grafo-escena.o: home/alvaro/IG/practica1/src/grafo-escena.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/grafo-escena.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/grafo-escena.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/grafo-escena.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.o
 
-home/alvaro/IG/practica1/src/grafo-escena.i: home/alvaro/IG/practica1/src/grafo-escena.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/grafo-escena.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/grafo-escena.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/grafo-escena.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.i
 
-home/alvaro/IG/practica1/src/grafo-escena.s: home/alvaro/IG/practica1/src/grafo-escena.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/grafo-escena.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/grafo-escena.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/grafo-escena.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/grafo-escena.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.cpp.s
 
-home/alvaro/IG/practica1/src/main.o: home/alvaro/IG/practica1/src/main.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/main.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/main.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/main.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.o
 
-home/alvaro/IG/practica1/src/main.i: home/alvaro/IG/practica1/src/main.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/main.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/main.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/main.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.i
 
-home/alvaro/IG/practica1/src/main.s: home/alvaro/IG/practica1/src/main.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/main.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/main.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/main.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.cpp.s
 
-home/alvaro/IG/practica1/src/malla-ind.o: home/alvaro/IG/practica1/src/malla-ind.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/malla-ind.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/malla-ind.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-ind.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/malla-ind.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.o
 
-home/alvaro/IG/practica1/src/malla-ind.i: home/alvaro/IG/practica1/src/malla-ind.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/malla-ind.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/malla-ind.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-ind.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/malla-ind.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.i
 
-home/alvaro/IG/practica1/src/malla-ind.s: home/alvaro/IG/practica1/src/malla-ind.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/malla-ind.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/malla-ind.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-ind.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/malla-ind.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.cpp.s
 
-home/alvaro/IG/practica1/src/malla-revol.o: home/alvaro/IG/practica1/src/malla-revol.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/malla-revol.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/malla-revol.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-revol.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/malla-revol.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.o
 
-home/alvaro/IG/practica1/src/malla-revol.i: home/alvaro/IG/practica1/src/malla-revol.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/malla-revol.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/malla-revol.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-revol.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/malla-revol.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.i
 
-home/alvaro/IG/practica1/src/malla-revol.s: home/alvaro/IG/practica1/src/malla-revol.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/malla-revol.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/malla-revol.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/malla-revol.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/malla-revol.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.cpp.s
 
-home/alvaro/IG/practica1/src/materiales-luces.o: home/alvaro/IG/practica1/src/materiales-luces.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/materiales-luces.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/materiales-luces.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/materiales-luces.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.o
 
-home/alvaro/IG/practica1/src/materiales-luces.i: home/alvaro/IG/practica1/src/materiales-luces.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/materiales-luces.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/materiales-luces.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/materiales-luces.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.i
 
-home/alvaro/IG/practica1/src/materiales-luces.s: home/alvaro/IG/practica1/src/materiales-luces.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/materiales-luces.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/materiales-luces.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/materiales-luces.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/materiales-luces.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.cpp.s
 
-home/alvaro/IG/practica1/src/modelo-jer.o: home/alvaro/IG/practica1/src/modelo-jer.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/modelo-jer.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/modelo-jer.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/modelo-jer.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.o
 
-home/alvaro/IG/practica1/src/modelo-jer.i: home/alvaro/IG/practica1/src/modelo-jer.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/modelo-jer.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/modelo-jer.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/modelo-jer.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.i
 
-home/alvaro/IG/practica1/src/modelo-jer.s: home/alvaro/IG/practica1/src/modelo-jer.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/modelo-jer.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/modelo-jer.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/modelo-jer.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/modelo-jer.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.cpp.s
 
-home/alvaro/IG/practica1/src/objeto3d.o: home/alvaro/IG/practica1/src/objeto3d.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/objeto3d.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/objeto3d.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/objeto3d.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.o
 
-home/alvaro/IG/practica1/src/objeto3d.i: home/alvaro/IG/practica1/src/objeto3d.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/objeto3d.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/objeto3d.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/objeto3d.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.i
 
-home/alvaro/IG/practica1/src/objeto3d.s: home/alvaro/IG/practica1/src/objeto3d.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/objeto3d.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/objeto3d.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/objeto3d.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/objeto3d.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.cpp.s
 
-home/alvaro/IG/practica1/src/seleccion.o: home/alvaro/IG/practica1/src/seleccion.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.o
 
-.PHONY : home/alvaro/IG/practica1/src/seleccion.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.o
 
 # target to build an object file
-home/alvaro/IG/practica1/src/seleccion.cpp.o:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.o
-.PHONY : home/alvaro/IG/practica1/src/seleccion.cpp.o
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.o
 
-home/alvaro/IG/practica1/src/seleccion.i: home/alvaro/IG/practica1/src/seleccion.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.i
 
-.PHONY : home/alvaro/IG/practica1/src/seleccion.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.i
 
 # target to preprocess a source file
-home/alvaro/IG/practica1/src/seleccion.cpp.i:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.i
-.PHONY : home/alvaro/IG/practica1/src/seleccion.cpp.i
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.i
 
-home/alvaro/IG/practica1/src/seleccion.s: home/alvaro/IG/practica1/src/seleccion.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.s
 
-.PHONY : home/alvaro/IG/practica1/src/seleccion.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.s
 
 # target to generate assembly for a file
-home/alvaro/IG/practica1/src/seleccion.cpp.s:
-	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/IG/practica1/src/seleccion.cpp.s
-.PHONY : home/alvaro/IG/practica1/src/seleccion.cpp.s
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.cpp.s
+
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.o
+
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.o
+
+# target to build an object file
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.o
+
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.i
+
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.i
+
+# target to preprocess a source file
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.i
+
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.s
+
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.s
+
+# target to generate assembly for a file
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.cpp.s
+
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.o: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.o
+
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.o
+
+# target to build an object file
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.o
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.o
+
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.i: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.i
+
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.i
+
+# target to preprocess a source file
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.i
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.i
+
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.s: home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.s
+
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.s
+
+# target to generate assembly for a file
+home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_linux_exe.dir/build.make CMakeFiles/pracs_ig_linux_exe.dir/home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.s
+.PHONY : home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.cpp.s
 
 # Help Target
 help:
@@ -564,54 +591,57 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... pracs_ig_linux_exe"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/cauce.o"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/cauce.i"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/cauce.s"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/fbo.o"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/fbo.i"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/fbo.s"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.o"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.i"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/ig-aux.s"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.o"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.i"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/lector-jpg.s"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.o"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.i"
-	@echo "... home/alvaro/IG/practica1/materiales/src-cpp/lector-ply.s"
-	@echo "... home/alvaro/IG/practica1/src/animacion.o"
-	@echo "... home/alvaro/IG/practica1/src/animacion.i"
-	@echo "... home/alvaro/IG/practica1/src/animacion.s"
-	@echo "... home/alvaro/IG/practica1/src/camara.o"
-	@echo "... home/alvaro/IG/practica1/src/camara.i"
-	@echo "... home/alvaro/IG/practica1/src/camara.s"
-	@echo "... home/alvaro/IG/practica1/src/escena.o"
-	@echo "... home/alvaro/IG/practica1/src/escena.i"
-	@echo "... home/alvaro/IG/practica1/src/escena.s"
-	@echo "... home/alvaro/IG/practica1/src/grafo-escena.o"
-	@echo "... home/alvaro/IG/practica1/src/grafo-escena.i"
-	@echo "... home/alvaro/IG/practica1/src/grafo-escena.s"
-	@echo "... home/alvaro/IG/practica1/src/main.o"
-	@echo "... home/alvaro/IG/practica1/src/main.i"
-	@echo "... home/alvaro/IG/practica1/src/main.s"
-	@echo "... home/alvaro/IG/practica1/src/malla-ind.o"
-	@echo "... home/alvaro/IG/practica1/src/malla-ind.i"
-	@echo "... home/alvaro/IG/practica1/src/malla-ind.s"
-	@echo "... home/alvaro/IG/practica1/src/malla-revol.o"
-	@echo "... home/alvaro/IG/practica1/src/malla-revol.i"
-	@echo "... home/alvaro/IG/practica1/src/malla-revol.s"
-	@echo "... home/alvaro/IG/practica1/src/materiales-luces.o"
-	@echo "... home/alvaro/IG/practica1/src/materiales-luces.i"
-	@echo "... home/alvaro/IG/practica1/src/materiales-luces.s"
-	@echo "... home/alvaro/IG/practica1/src/modelo-jer.o"
-	@echo "... home/alvaro/IG/practica1/src/modelo-jer.i"
-	@echo "... home/alvaro/IG/practica1/src/modelo-jer.s"
-	@echo "... home/alvaro/IG/practica1/src/objeto3d.o"
-	@echo "... home/alvaro/IG/practica1/src/objeto3d.i"
-	@echo "... home/alvaro/IG/practica1/src/objeto3d.s"
-	@echo "... home/alvaro/IG/practica1/src/seleccion.o"
-	@echo "... home/alvaro/IG/practica1/src/seleccion.i"
-	@echo "... home/alvaro/IG/practica1/src/seleccion.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/cauce.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/fbo.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/ig-aux.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-jpg.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/materiales/src-cpp/lector-ply.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/animacion.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/camara.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/escena.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/grafo-escena.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/latapeones.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/main.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-ind.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/malla-revol.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/materiales-luces.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/modelo-jer.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/objeto3d.s"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.o"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.i"
+	@echo "... home/alvaro/CUARTO_PRIMER_CUATRI/IG/practica1/src/seleccion.s"
 .PHONY : help
 
 

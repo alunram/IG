@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Informática Gráfica
@@ -87,6 +87,9 @@ Tupla4f Objeto3D::leerFijarColVertsCauce( ContextoVis & cv )
 
    // leer color previo
    Tupla4f color_previo = cv.cauce->leerColorActual();
+
+   if ( cv.visualizando_normales )
+      return color_previo ;
 
    if ( cv.visualizando_normales )
       return color_previo ;

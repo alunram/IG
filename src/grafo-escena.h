@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Gestión de una grafo de escena (declaraciones)
@@ -68,6 +68,7 @@ class NodoGrafoEscena : public Objeto3D
    // .......
    //mio:
    std::vector<EntradaNGE> entradas;
+   bool centrocalculado = false;
 
    public:
 
@@ -119,6 +120,44 @@ class Articulado : public NodoGrafoEscena
         Articulado();
         virtual unsigned leerNumParametros() const;
         virtual void actualizarEstadoParametro(const unsigned iParam, const float tSec);
+};
+
+class NodoCubo24 : public NodoGrafoEscena
+{
+   public:
+      NodoCubo24();
+};
+
+class NodoDiscoP4 : public NodoGrafoEscena
+{
+   public:
+      NodoDiscoP4();
+};
+
+class GrafoEsferasP5 : public NodoGrafoEscena
+{
+   public:
+      GrafoEsferasP5();
+};
+
+//EJERCICIO EXAMEN P4
+class NodoEXP4 : public NodoGrafoEscena
+{
+   public:
+      NodoEXP4();
+};
+
+//EXAMEN P5
+class EsferaEXP5 : public NodoGrafoEscena
+{
+   public:
+      EsferaEXP5(unsigned n);
+};
+
+class AnilloEXP5 : public NodoGrafoEscena
+{
+   public:
+      AnilloEXP5(unsigned n);
 };
 
 #endif // GRAFO_ESCENA_HPP

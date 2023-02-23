@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // Práctica 3
 // *********************************************************************
 // **
@@ -233,6 +233,7 @@ class P3 : public NodoGrafoEscena
     protected:
         unsigned parametros = 6; //son dos, pero para llamar al metodo actualizarestasparametros de las bici hace falta que iParam vaya de 0 a 5
         
+        Rampa *rampa = new Rampa();
         Bici *bici = new Bici();
         Bici2 *bici2 = new Bici2();
 

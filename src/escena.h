@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Informática Gráfica - curso 2020-21
@@ -79,6 +79,9 @@ class Escena
 
    // índice del objeto activo (en el vector 'objetos')
    unsigned ind_objeto_actual = 0 ;
+
+   private: 
+      void visualizarNormales( ContextoVis & cv );
 } ;
 
 
@@ -112,6 +115,22 @@ class Escena3 : public Escena
 {
    public:
       Escena3();
+};
+
+//mio:
+//añado la clase escena4
+class Escena4 : public Escena
+{
+   public:
+      Escena4();
+};
+
+//mio:
+//añado la clase escena5
+class Escena5 : public Escena
+{
+   public:
+      Escena5();
 };
 
 

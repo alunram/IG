@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // Práctica 3
 // *********************************************************************
 // **
@@ -25,13 +25,20 @@
 using namespace std ;
 
 P3 :: P3(){
+    unsigned int  identificador_bici2 = 15;
+    unsigned int  identificador_rampa = 16;
     bici = new Bici();
     agregar(bici);
     
     bici2 = new Bici2();
+    bici2->ponerIdentificador(identificador_bici2);
+    bici2->ponerNombre("Bici 2");
     agregar(bici2);
 
-    agregar(new Rampa());
+    rampa = new Rampa();
+    rampa->ponerIdentificador(identificador_rampa);
+    rampa->ponerNombre("Rampa");
+    agregar(rampa);
 }
 
 unsigned P3:: leerNumParametros() const{
@@ -51,22 +58,65 @@ Bici:: Bici(){
     unsigned int subirbici = agregar(MAT_Traslacion({0.0, +1.0, 0.0}));
     unsigned int tam = agregar(MAT_Escalado(1.0, 1.0, 1.0));
 
-    agregar(new Manillar());
-    agregar(new Plato(40));
-    agregar(new Sillin());
-    agregar(new Pinones(40));
-    agregar(new Cuadro());
-    agregar(new Cadena());
+    unsigned int  identificador_manillar = 12;
+    unsigned int  identificador_plato = 13;
+    unsigned int  identificador_sillin = 14;
+    //unsigned int  identificador_pinones = 4;
+    unsigned int  identificador_pinones = 5;
+    unsigned int  identificador_cuadro = 6;
+    unsigned int  identificador_cadena = 7;
+    unsigned int  identificador_ruedat = 8;
+    unsigned int  identificador_ruedad = 9;
+    unsigned int  identificador_pedald = 10;
+    unsigned int  identificador_pedali = 11;
+
+    Manillar *man = new Manillar();
+    man->ponerIdentificador(identificador_manillar);
+    man->ponerNombre("Manillar");
+    Plato *plat = new Plato(40);
+    plat->ponerIdentificador(identificador_plato);
+    plat->ponerNombre("Plato");
+    Sillin *sil = new Sillin();
+    sil->ponerIdentificador(identificador_sillin);
+    sil->ponerNombre("Sillin");
+    Pinones *pin = new Pinones(40);
+    pin->ponerIdentificador(identificador_pinones);
+    pin->ponerNombre("Pinones");
+    Cuadro *cuad = new Cuadro();
+    cuad->ponerIdentificador(identificador_cuadro);
+    cuad->ponerNombre("Cuadro");
+    Cadena *cad = new Cadena();
+    cad->ponerIdentificador(identificador_cadena);
+    cad->ponerNombre("Cadena");
+
+
+    agregar(man);
+    agregar(plat);
+    agregar(sil);
+    agregar(pin);
+    agregar(cuad);
+    agregar(cad);
     
+    unsigned int  identificadorbici = 4;
+    Material *materialbici = new Material(0.5, 0.5, 1, 1.0);
+    agregar(materialbici);
 
     //con animaciones:
     rt = new RuedaTrasera();
+    rt->ponerIdentificador(identificador_ruedat);
+    rt->ponerNombre("Rueda Trasera");
     agregar(rt);
     rd = new RuedaDelantera();
+    rd->ponerIdentificador(identificador_ruedad);
+    rd->ponerNombre("Rueda Delantera");
     agregar(rd);
     pd = new PedalDerecho();
+    pd->ponerIdentificador(identificador_pedald);
+    pd->ponerNombre("Pedal derecho");
     agregar(pd);
     pi = new PedalIzquierdo();
+    pi->ponerIdentificador(identificador_pedali);
+    pi->ponerNombre("Pedal izquierdo");
     agregar(pi);
 
     movimiento = leerPtrMatriz(subirbici);
@@ -251,11 +301,30 @@ Manillar :: Manillar(){
 }
 
 Sillin :: Sillin(){
+    unsigned int  identificadorpegatina = 1;
     ponerColor({0.0, 0.0, 0.0});
+    Textura *text = new Textura("tour.jpg");
+    Material *materialsillin = new Material(text, 0.5, 0.5, 0.5, 20.0);
+    Pegatina *peg = new Pegatina();
+
+    peg->ponerNombre("Pegatina Tour");
+    peg->ponerIdentificador(identificadorpegatina);
+
     agregar(MAT_Traslacion({-1.72, 1.8, 0.0375}));
     agregar(MAT_Escalado(0.25, 0.25, 0.1875));
     agregar(new SillinBici());
+    agregar(materialsillin);
+    agregar(MAT_Traslacion({0.0, 0.05, 0.0}));
+    agregar(peg);
+    
 }
+
+/*  Textura *text = new Textura("asfalto1.jpg");
+    Material *materialsuelo = new Material(text, 0.5, 0.5, 0.5, 20.0);
+
+    agregar(MAT_Traslacion({4.0, 0.0, 4.0}));
+    agregar(materialsuelo);
+    agregar(new RampaBici());*/
 
 BielaDerecha :: BielaDerecha(){
     ponerColor({0.0, 0.0, 0.0});
@@ -384,6 +453,10 @@ Plato :: Plato(unsigned n){
 }
 
 Cuadro :: Cuadro(){
+    unsigned int  identificadorcuadro = 2;
+    Material *materialcuadro = new Material(0.5, 0.5, 1, 25.0);
+
+    agregar(materialcuadro);
     agregar(new HorquillaTrasera());
     agregar(new HorquillaDelantera());
     agregar(new ParteBajaHorquilla());
@@ -479,6 +552,7 @@ CuadroParteAlta :: CuadroParteAlta(){
 
 Tija :: Tija (){
     ponerColor({0.0, 0.0, 0.0});
+
     agregar(MAT_Traslacion({-1.69, 1.5, 0.0105}));
     agregar(MAT_Escalado(0.035, 0.035, 0.035));
     agregar(new Cilindro(20, 20));
@@ -528,10 +602,35 @@ Pinones :: Pinones(unsigned n){
 }
 
 Rampa :: Rampa(){
-   ponerColor({0.1, 0.1, 0.1});
-   agregar(MAT_Traslacion({4.0, 0.0, 4.0}));
-   agregar(new RampaBici());
+   //ponerColor({0.1, 0.1, 0.1});
+    unsigned int  identificadorrampa = 3;
+    Textura *text = new Textura("asfalto1.jpg");
+    Material *materialsuelo = new Material(text, 0.5, 0.5, 0.5, 20.0);
+
+    agregar(MAT_Traslacion({4.0, 0.0, 4.0}));
+    agregar(materialsuelo);
+    agregar(new RampaBici());
 }
+
+/*
+Lata::Lata(std::string nombre_archivo)
+{
+   Textura *text = new Textura(nombre_archivo);
+
+   Material *material_arribayabajo = new Material(0.5, 0.5, 0.5, 50.0);
+
+   agregar(material_arribayabajo);
+
+   agregar(new MallaRevolPLY("lata-psup.ply", 100));
+   agregar(new MallaRevolPLY("lata-pinf.ply", 100));
+
+   Material *material_partecentral = new Material(text, 1, 1, 1, 20.0);
+
+   agregar(material_partecentral);
+
+   agregar(new MallaRevolPLY("lata-pcue.ply", 100));
+
+}*/
 
 //------------------------------------------------------------------------------------
 //EJERCICIOS ADICIONALES P3:

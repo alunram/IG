@@ -1,3 +1,3 @@
-/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/rebuild_cache.dir
-/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/edit_cache.dir
-/home/alvaro/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir
+/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles/rebuild_cache.dir
+/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles/edit_cache.dir
+/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/cmake/CMakeFiles/pracs_ig_linux_exe.dir

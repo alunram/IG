@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Informática Gráfica, curso 2016-17
@@ -165,6 +165,14 @@ void FGE_PulsarLevantarTecla( GLFWwindow* window, int key, int scancode, int act
       // de luz actual (usar método 'colFuentes' de la escena activa para obtener un puntero), llamar a
       // 'ProcesaTeclaFuenteLuz', si devuelve 'true', forzar revisualizar escena.
       // .....
+      
+      //mio:
+      ColFuentesLuz * colFuentesLuz = escenas[ind_escena_act]->colFuentes();
+      revisualizar_escena = ProcesaTeclaFuenteLuz(colFuentesLuz, key);
+      /*if (ProcesaTeclaFuenteLuz(colFuentesLuz, key))
+      {
+         revisualizar_escena = true;
+      }*/
 
       return ; // finalizar la f.g.e, ya que si está la tecla L pulsada no se mira ninguna otra tecla.
    }
@@ -178,12 +186,13 @@ void FGE_PulsarLevantarTecla( GLFWwindow* window, int key, int scancode, int act
       // 'true', forzar revisualizar escena (asignando valor a 'revisualizar_escena')
       
       //mio:
-      //revisualizar_escena = ProcesarTeclaAnimacion(objeto, key);
+      revisualizar_escena = ProcesarTeclaAnimacion(objeto, key);
 
-      if (ProcesarTeclaAnimacion(objeto, key))
+      /*if (ProcesarTeclaAnimacion(objeto, key))
       {
          revisualizar_escena = true;
-      }
+      }*/
+
 
       return ; // finalizar la f.g.e, ya que si está la tecla A pulsada no se mira ninguna otra tecla.
    }
@@ -486,8 +495,13 @@ void Inicializar( int argc, char *argv[] )
    //añado escena3
    escenas.push_back(new Escena3());
 
+   //mio:
+   //añado escena4
+   escenas.push_back(new Escena4());
 
-
+   //mio:
+   //añado escena5
+   escenas.push_back(new Escena5());
 }
 
 // ---------------------------------------------------------------------

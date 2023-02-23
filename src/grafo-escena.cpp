@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Gestión de una grafo de escena (implementación)
@@ -31,6 +31,7 @@ using namespace std ;
 
 // ---------------------------------------------------------------------
 // Constructor para entrada de tipo sub-objeto
+int valoridentificador=1;
 
 EntradaNGE::EntradaNGE( Objeto3D * pObjeto )
 {
@@ -80,8 +81,10 @@ EntradaNGE::~EntradaNGE()
 // -----------------------------------------------------------------------------
 // Visualiza usando OpenGL
 
+
 void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
 {
+   leerFijarColVertsCauce(cv);
    // COMPLETAR: práctica 3: recorrer las entradas y visualizar cada nodo.
    // ........
    //mio:
@@ -91,7 +94,13 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
 
    //color?????
    const Tupla4f color_previo = leerFijarColVertsCauce(cv);
-   
+
+   //material P4:
+   Material * cvMaterial = cv.material_act;
+   if (!cv.iluminacion){
+      cvMaterial = nullptr;
+   }
+
    //rcorrer todas las entradas del array que hay en el nodo:
    for (unsigned i = 0; i < entradas.size(); i++)
    {
@@ -106,13 +115,29 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
          break;
 
       case TipoEntNGE::material:
-         //esto ya sera de la P4 supongo
+         //esto ya sera de la P4 supongo  
+         //si. diap 208 t3:
+         if (cv.iluminacion){
+            //entradas[i].material->activar( cv );
+               
+            cv.material_act = entradas[i].material;
+            cv.material_act->activar(cv);
+         }
          break;
       }
    }
    
    // restaurar el color previamente fijado
    cv.cauce->fijarColor(color_previo);
+
+   //restauramos material:
+   //if (cvMaterial != nullptr){
+      //cv.material_act = cvMaterial;
+     // cv.material_act->activar(cv);
+   //}
+
+   if (cvMaterial != nullptr && cv.material_act != cvMaterial)
+      cvMaterial->activar(cv);
 
    //pop de modelview
    cv.cauce->popMM();
@@ -123,8 +148,6 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    //   1. guardar puntero al material activo al inicio (está en cv.material_act)
    //   2. si una entrada des de tipo material, activarlo y actualizar 'cv.material_act'
    //   3. al finalizar, restaurar el material activo al inicio (si es distinto del actual)
-
-
 
 }
 
@@ -249,7 +272,25 @@ void NodoGrafoEscena::calcularCentroOC()
    //    en coordenadas de objeto (hay que hacerlo recursivamente)
    //   (si el centro ya ha sido calculado, no volver a hacerlo)
    // ........
+   //mio:
+   Matriz4f matriz_ = MAT_Ident();
+   Tupla3f centro, sum = {0.0, 0.0, 0.0};
+   float centros = 0;
 
+   if(!centrocalculado){
+      for (unsigned i = 0; i < entradas.size(); i++){
+         if (entradas[i].tipo == TipoEntNGE::objeto){
+            entradas[i].objeto->calcularCentroOC();
+            sum = sum + (matriz_ * entradas[i].objeto->leerCentroOC());
+            centros++;
+         }else if (entradas[i].tipo == TipoEntNGE::transformacion){
+               matriz_ = matriz_ * (*entradas[i].matriz);
+            }
+      }
+      centro = sum/centros;
+      ponerCentroOC(centro);
+      centrocalculado = true;
+   }
 }
 // -----------------------------------------------------------------------------
 // método para buscar un objeto con un identificador y devolver un puntero al mismo
@@ -262,26 +303,46 @@ bool NodoGrafoEscena::buscarObjeto
    Tupla3f &         centro_wc   // (salida) centro del objeto en coordenadas del mundo
 )
 {
-   assert( 0 < ident_busc );
+   assert(0 < ident_busc);
 
    // COMPLETAR: práctica 5: buscar un sub-objeto con un identificador
    // Se deben de dar estos pasos:
+   Matriz4f mmodeladoaux = mmodelado;
 
    // 1. calcula el centro del objeto, (solo la primera vez)
    // ........
-
+   //mio:
+   if (!centrocalculado)
+      calcularCentroOC(); //¿solo la primera vez?
 
    // 2. si el identificador del nodo es el que se busca, ya está (terminar)
    // ........
-
+   //mio:
+   if (leerIdentificador() == ident_busc){
+      centro_wc = mmodelado * leerCentroOC();   //escribir centro
+      if (objeto != nullptr){
+         *objeto = this;   //escribir objeto
+      }
+      
+      return true; //terminar
+   }
 
    // 3. El nodo no es el buscado: buscar recursivamente en los hijos
    //    (si alguna llamada para un sub-árbol lo encuentra, terminar y devolver 'true')
    // ........
-
+   //mio:
+   for (unsigned i = 0; i < entradas.size(); i++){
+      if (entradas[i].tipo == TipoEntNGE::objeto){
+         if (entradas[i].objeto->buscarObjeto(ident_busc, mmodeladoaux, objeto, centro_wc)){
+            return true;
+         }
+      }else if (entradas[i].tipo == TipoEntNGE::transformacion){
+            mmodeladoaux = mmodeladoaux * (*entradas[i].matriz);
+            }
+   }
 
    // ni este nodo ni ningún hijo es el buscado: terminar
-   return false ;
+   return false;
 }
 
 
@@ -380,4 +441,107 @@ void Articulado::actualizarEstadoParametro(const unsigned iParam, const float tS
     default:
         break;
     }
+}
+
+NodoCubo24::NodoCubo24()
+{
+   Textura *text = new Textura("window-icon.jpg");
+   Material *mat = new Material(text, 1, 1, 1, 50);
+
+   agregar(mat);
+   agregar(new Cubo24());
+}
+
+NodoDiscoP4::NodoDiscoP4()
+{
+   ponerNombre("Nodo ejercicio adicional práctica 4, examen 27 enero");
+
+   Textura *text = new Textura("cuadricula.jpg");
+   Material *material_disco = new Material(text, 0.4, 0.5, 0.5, 5.0);
+
+   agregar( material_disco );
+   agregar( new MallaDiscoP4() );
+}
+
+//Ejercicio P5
+GrafoEsferasP5::GrafoEsferasP5()
+{
+   const unsigned
+      n_filas_esferas = 8,
+      n_esferas_x_fila = 5;
+   const float
+      e = 0.4/n_esferas_x_fila ;
+
+   agregar( MAT_Escalado( e,e,e ));
+   unsigned int  identificadoresfera = 1000;
+   for( unsigned i = 0 ; i < n_filas_esferas ; i++ )
+   {
+      NodoGrafoEscena * fila_esferas = new NodoGrafoEscena() ;
+      for( unsigned j = 0 ; j < n_esferas_x_fila ; j++ )
+      {
+         MallaInd * esfera = new Esfera(40, 40) ;
+         
+         esfera->ponerIdentificador(identificadoresfera);
+
+         unsigned numero = i*j+j;
+         string nombre = "Esfera ";
+         esfera->ponerNombre(nombre);
+
+         fila_esferas->agregar( MAT_Traslacion({2.2, 0.0, 0.0}));
+         fila_esferas->agregar( esfera );
+         identificadoresfera++;
+      }
+      
+      agregar( fila_esferas );
+      agregar( MAT_Traslacion( {0.0, 0.0, 5.0 }));
+   }
+}
+
+
+//EJERCICIO EXAMNE P4
+NodoEXP4::NodoEXP4()
+{
+   Textura *text = new Textura("textura-exp4-v2.jpg"); //foto de prado
+   Material *material_tetraedro = new Material(text, 0.5, 0.5, 0.5, 80);
+
+   agregar( material_tetraedro );
+   agregar( new MallaEXP4() );
+}
+
+EsferaEXP5::EsferaEXP5(unsigned n)
+{
+   agregar(MAT_Escalado(M_PI/n, M_PI/n, M_PI/n)); //con esto el radio pasaria de 1 a pi/n, pero no se me ve como en la foto del examen
+   Esfera *esfera = new Esfera(20, 20);
+   esfera->ponerIdentificador(valoridentificador);
+   esfera->ponerNombre("Esfera examen");
+   agregar( esfera );
+
+   valoridentificador++;
+
+   //para que la camara no mire a las esferas cambio el metodo seleccion. he puesto esto, pero no sirve. no se el motivo:
+   /*
+      EsferaEXP5 * pesf = dynamic_cast<EsferaEXP5 *> (objetoencontrado);
+      if(pesf == nullptr){
+         escena->camaraActual()->mirarHacia(puntocentro);
+         cout << "\nSe ha encontrado un objeto. Identificador: " << ident << ". Nombre: " << objetoencontrado->leerNombre() << "\n";
+      }else{
+         cout << "\nNo se apunta al objeto esfera del examen de la p5 ";
+         objetoencontrado->ponerColor({1, 0.5, 0.5});
+      } 
+   */
+}
+
+AnilloEXP5::AnilloEXP5(unsigned n)
+{
+   assert(n>3);
+   ponerIdentificador(0);
+   
+   for (int i = 0; i < n; i++)
+   {
+      agregar(new EsferaEXP5(n));
+      double angulo = 360/n; 
+      agregar(MAT_Rotacion(angulo, {0, 1, 0}));
+      agregar(MAT_Traslacion({1.0, 0.0, 0.0}));
+   }
+   
 }

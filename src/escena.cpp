@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 
 #include "ig-aux.h"
 #include "escena.h"
@@ -11,6 +11,7 @@
 #include "materiales-luces.h"
 #include "seleccion.h"
 #include "modelo-jer.h"
+#include "latapeones.h"
 
 // -----------------------------------------------------------------------------------------------
 
@@ -18,10 +19,18 @@ Escena::Escena()
 {
    // COMPLETAR: Práctica 4: inicializar 'col_fuentes' y 'material_ini'
    // ...
+   //mio:
+   col_fuentes = new Col2Fuentes();
+   material_ini = new Material();
 
    // COMPLETAR: Práctica 5: hacer 'push_back' de varias camaras perspectiva u ortogonales,
    // (sustituir la cámara orbital simple ('CamaraOrbitalSimple') por varias cámaras de 3 modos ('Camara3Modos')
-   camaras.push_back(new CamaraOrbitalSimple());
+   //camaras.push_back(new CamaraOrbitalSimple()); //esta se va a quitar
+   camaras.push_back(new Camara3Modos(true,{5.0, 1.0, 1.0}, 1.0, {2.0, 1.0, 1.0}, 50.0));
+   //camaras.push_back(new Camara3Modos());
+   //camaras.push_back(new Camara3Modos());
+   camaras.push_back( new Camara3Modos(false,{6.5, 6.5, 6.5}, 1.0, {4.0, 4.0, 4.0}, 65.0)); //alzado ortogonal
+   camaras.push_back( new Camara3Modos(true, {4.0, 3.0, 1.0}, 1.0, {2.0, 1.0, 4.0}, 80.0)); //perspectiva
 }
 // -----------------------------------------------------------------------------------------------
 // visualiza la escena en la ventana actual, usando la configuración especificada en 'cv'
@@ -100,6 +109,12 @@ void Escena::visualizarGL(ContextoVis &cv)
       // * activar la colección de fuentes de la escena
       // * activar el material inicial
       // ....
+      //mio:
+      cauce->fijarEvalMIL(true);
+      cauce->fijarEvalText(false);
+
+      col_fuentes->activar(*(cv.cauce));
+      material_ini->activar(cv);
    }
    else // si la iluminación no está activada, deshabilitar MIL y texturas
    {
@@ -140,6 +155,9 @@ void Escena::visualizarGL(ContextoVis &cv)
       glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //german lo tiene diferente
 
       objeto->visualizarGeomGL(cv);
+
+      if ( cv.visualizar_normales && !cv.modo_seleccion )
+         visualizarNormales( cv );
    }
 }
 
@@ -152,6 +170,29 @@ void Escena::siguienteCamara()
    ind_camara_actual = (ind_camara_actual + 1) % camaras.size();
    using namespace std;
    cout << "Cámara actual cambiada a: " << (ind_camara_actual + 1) << " (de " << camaras.size() << ")" << endl;
+}
+
+void Escena::visualizarNormales( ContextoVis & cv )
+{
+   // recuperar el objeto raiz de esta escena y comprobar que está ok.
+   bool ilum_ant = cv.iluminacion ;
+   assert( cv.cauce != nullptr );
+   Objeto3D * objeto = objetos[ind_objeto_actual] ; assert( objeto != nullptr );
+
+   // configurar el cauce:
+   cv.cauce->fijarEvalMIL( false );
+   cv.cauce->fijarEvalText( false );
+
+   // configurar el contexto de visualizacion
+   cv.visualizando_normales = true ;   // hace que MallaInd::visualizarGL visualize las normales.
+   cv.iluminacion           = false ;
+
+   // visualizar objeto actual
+   objetos[ind_objeto_actual]->visualizarGL( cv );
+
+   // restaurar atributos cambiados en el contexto de visualización
+   cv.visualizando_normales = false ;
+   cv.iluminacion = ilum_ant ;
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -210,17 +251,18 @@ Escena1::Escena1()
    // .........
    //mio:
    unsigned nestrella = 8;
-   objetos.push_back(new PiramideCruz());
+   //objetos.push_back(new PiramideCruz());
    //objetos.push_back(new Rueda(50));
-   //objetos.push_back(new CuboTejado());
-   //objetos.push_back(new Tetraedro()); 
+   objetos.push_back(new Cubo());
+   objetos.push_back(new CuboTejado());
+   objetos.push_back(new Tetraedro()); 
    // cuando haga mas objetos se veran poniendolo aqui
-   //objetos.push_back(new CuboColores());
-   //objetos.push_back(new EstrellaZ(nestrella));
-   //objetos.push_back(new CasaX());
-   //objetos.push_back(new MallaTriangulo());
-   //objetos.push_back(new MallaCuadrado());
-   //objetos.push_back(new MallaPiramideL());
+   objetos.push_back(new CuboColores());
+   objetos.push_back(new EstrellaZ(nestrella));
+   objetos.push_back(new CasaX());
+   objetos.push_back(new MallaTriangulo());
+   objetos.push_back(new MallaCuadrado());
+   objetos.push_back(new MallaPiramideL());
    //objetos.push_back(new examenlunes());
 
    cout << "hecho." << endl
@@ -242,16 +284,16 @@ Escena2::Escena2()
 
    //aquí pondré los objetos.push_back();
    //objetos.push_back(new Cilindro(20, 20));
-   objetos.push_back(new CopaRevol(32, 32));
-   //objetos.push_back(new Cilindro(50, 50));
-   //objetos.push_back(new Cono(15, 35));
+   //objetos.push_back(new CopaRevol(32, 32));
+   objetos.push_back(new Cilindro(50, 50));
+   objetos.push_back(new Cono(15, 35));
    //objetos.push_back(new MallaRevolPLY("peon.ply", 20));
    //objetos.push_back(new MallaPLY("ant.ply"));
    //objetos.push_back(new MallaPLY("beethoven.ply"));
    //objetos.push_back(new MallaPLY("big_dodge.ply"));
-   //objetos.push_back(new Esfera(40, 40));
-   //objetos.push_back(new PiramideEstrellaZ(8));
-   //objetos.push_back(new RejillaY(10,10));
+   objetos.push_back(new Esfera(40, 40));
+   objetos.push_back(new PiramideEstrellaZ(8));
+   objetos.push_back(new RejillaY(10,10));
    //objetos.push_back(new MallaTorre(5));
    //objetos.push_back(new circunferenciaprueba(1,20)); //es una circunferencia
    
@@ -274,7 +316,7 @@ Escena3:: Escena3()
 
    //aquí pondré los objetos.push_back();
    //objetos.push_back(new ahoraborroesto(10));
-   objetos.push_back(new Articulado());
+   //objetos.push_back(new Articulado());
    objetos.push_back(new P3());
    //objetos.push_back(new Bici());
    //objetos.push_back(new GrafoEstrellaX(6));
@@ -291,9 +333,42 @@ Escena3:: Escena3()
 // Añadir la implementación del constructor de la clase Escena4 para construir
 // los objetos que se indican en los guiones de las práctica 4
 // .......
+//mio:
+Escena4:: Escena4()
+{
+   using namespace std;
+
+   cout << "Creando objetos de escena 4 .... " << flush;
+
+   //aquí pondré los objetos.push_back();
+   objetos.push_back(new NodoEXP4());
+   objetos.push_back(new LataPeones());
+   objetos.push_back(new NodoCubo24);
+   objetos.push_back(new NodoDiscoP4());
+
+
+   cout << "hecho." << endl
+        << flush;
+}
 
 // ----------------------------------------------------------------------
 // COMPLETAR: Práctica 5
 // Añadir la implementación del constructor de la clase Escena5 para construir
 // los objetos que se indican en los guiones de las práctica 5
 // .......
+//mio:
+Escena5:: Escena5()
+{
+   using namespace std;
+
+   cout << "Creando objetos de escena 5 .... " << flush;
+
+   //aquí pondré los objetos.push_back();
+   unsigned valor = 16;
+   objetos.push_back(new AnilloEXP5(valor));
+   objetos.push_back(new VariasLatasPeones());
+   objetos.push_back(new GrafoEsferasP5());
+   
+   cout << "hecho." << endl
+        << flush;
+}

@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Informática Gráfica, curso 2019-20
@@ -31,6 +31,7 @@ void MallaRevol::inicializar
    const int n = num_copias;
    Matriz4f matrizRot;
    Tupla3f eje = {0.0, 1.0, 0.0};
+
    //1. Crear la tabla de vértices:
    for (int i = 0; i < n; i++)
    {
@@ -53,6 +54,76 @@ void MallaRevol::inicializar
       }
    }
 
+   //P4:
+   std::vector<Tupla3f> normales, normalesaux;
+   Tupla3f resta, arista;
+
+   //aristas
+   for (unsigned int i = 0; i < m; i++)
+   {
+      resta = perfil[i + 1] - perfil[i];
+      arista = {resta(1), -resta(0), 0.0};
+
+      if (arista.lengthSq() > 0)
+         arista = arista.normalized();
+
+      normalesaux.push_back(arista);
+   }
+
+   //vertices
+   Tupla3f resta2;
+
+   normales.push_back(normalesaux[0]);
+
+   for (unsigned int i = 1; i < m-1; i++)
+   {
+      resta2 = normalesaux[i - 1] + normalesaux[i];
+
+      if(resta2.lengthSq() != 0.0)
+         resta2 = resta2.normalized();
+
+      normales.push_back(resta2);
+   }
+
+   normales.push_back(normalesaux[m - 2]);
+
+
+   //coordenadas de textura:
+   std::vector<float> d, t, sum_par;
+   float sum;
+
+   for (unsigned int i = 0; i < perfil.size() - 1; i++)
+   {
+      d.push_back((sqrt((perfil[i + 1] - perfil[i]).lengthSq()))); //dist
+      sum += d[i];
+   }
+
+   sum_par.push_back(0.0);
+   t.push_back(0.0);
+
+   for (unsigned int i = 1; i < perfil.size(); i++)
+   {
+      sum_par.push_back(sum_par[i - 1] + d[i - 1]);
+   }
+  
+   for (unsigned int i = 1; i < perfil.size(); i++)
+   {
+      t.push_back(sum_par[i] / sum);
+   }
+
+   for (int i = 0; i < n; i++)
+   {
+      for (int j = 0; j < m; j++)
+      {
+         float angulo = 360.0 * i / (n-1); 
+         matrizRot = MAT_Rotacion(angulo, eje);
+         nor_ver.push_back(matrizRot * normales[j]);
+
+         cc_tt_ver.push_back({float(i) / (n - 1), 1 - t[j]});
+      }
+   }
+
+   calcularNormales();
 
 }
 

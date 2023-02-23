@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11  -g -Wall -Wextra -Wno-unused-parameter -Wno-unused-priv
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alvaro/IG/practica1/builds/linux/../../src -I/home/alvaro/IG/practica1/builds/linux/../../materiales/src-cpp 
+CXX_INCLUDES = -I"/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/../../src" -I"/home/alvaro/CUARTO PRIMER CUATRI/IG/practica1/builds/linux/../../materiales/src-cpp" 
 

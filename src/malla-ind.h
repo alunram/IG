@@ -1,4 +1,4 @@
-//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 76068925J
+//Nombre: Alvaro, Apellidos: Luna Ramirez, Titulacion: GIM, correo: alvaroluna@correo.ugr.es, DNI: 
 // *********************************************************************
 // **
 // ** Informática Gráfica, curso 2016-17
@@ -66,8 +66,10 @@ class MallaInd : public Objeto3D
       virtual void visualizarGeomGL( ContextoVis & cv ) ;
       
 
-
-
+   private:
+      std::vector<Tupla3f> segmentos_normales ;   // dos tuplas por cada segmento (extremos)
+      GLenum nombre_vao_normales = 0 ;            // nombre del VAO con los segmentos de normales.  
+      void visualizarNormales( ContextoVis & cv ) ;
 } ;
 // ---------------------------------------------------------------------
 // Clase para mallas obtenidas de un archivo 'ply'
@@ -216,11 +218,31 @@ class RampaBici : public MallaInd
       RampaBici();
 };
 
+class Pegatina : public MallaInd{
+   public:
+      Pegatina();
+};
+
 //EXAMEN P1, P2, P3
 class PiramideCruz : public MallaInd
 {
    public:
       PiramideCruz();
+};
+
+//EJERCICIOS ADICIONALES P4
+class MallaDiscoP4 : public MallaInd
+{
+  public:
+      MallaDiscoP4();
+} ;
+
+
+//EJERCICIO EXAMEN P4
+class MallaEXP4 : public MallaInd
+{
+   public :
+      MallaEXP4();
 };
 
 #endif
